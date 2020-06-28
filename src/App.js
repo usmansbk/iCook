@@ -1,11 +1,11 @@
 import React from 'react';
 import {View} from 'react-native';
-import {Text} from 'react-native-paper';
+import Button from './common/Button';
 
 export default () => {
   return (
-    <View>
-      <Text>Start</Text>
+    <View style={{flex: 1, justifyContent: 'center', alignItems:'center'}}>
+      <Button />
     </View>
   );
 };
