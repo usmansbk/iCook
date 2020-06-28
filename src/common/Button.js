@@ -1,15 +1,16 @@
 import React from 'react';
-import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, StyleSheet} from 'react-native';
 import colors, {withOpacity} from '../config/colors';
+import Text from './Text';
 
-export default ({text = 'Button', disabled = true, onPress}) => {
+export default ({text = 'Button', disabled, onPress}) => {
   const active = disabled ? styles.inactive : styles.active;
   const label = disabled ? styles.inactiveLabel : styles.activeLabel;
 
   return (
     <TouchableOpacity style={[styles.container, active]} disabled={disabled}>
       <View style={styles.primary}>
-        <Text style={[styles.label, label]}>{text}</Text>
+        <Text style={label}>{text}</Text>
       </View>
     </TouchableOpacity>
   );
