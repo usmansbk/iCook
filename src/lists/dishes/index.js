@@ -10,8 +10,7 @@ export default class Dishes extends React.Component {
       id,
       title,
       description,
-      authorName,
-      authorAvatar,
+      author,
       likes,
       commentsCount,
       image,
@@ -23,8 +22,8 @@ export default class Dishes extends React.Component {
         id={id}
         title={title}
         description={description}
-        authorAvatar={authorAvatar}
-        authorName={authorName}
+        authorAvatar={author.avatar}
+        authorName={author.name}
         likes={likes}
         commentsCount={commentsCount}
         image={image}

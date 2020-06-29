@@ -1,11 +1,15 @@
+// id - should be randomly generated
 export default [
   {
     id: '1234',
     title: 'Coconut rice',
     likes: 4,
     comments: 8,
-    authorAvatar: 'https://i.pravatar.cc/300',
-    authorName: 'Black Smith',
+    author: {
+      id: 3,
+      name: 'Black Smith',
+      avatar: 'https://i.pravatar.cc/300',
+    },
     description:
       'Dont just stick to white and jollof rice! Try out this coconut rice recipe',
     isLiked: true,
@@ -18,8 +22,11 @@ export default [
     title: 'Coconut rice',
     likes: 14,
     comments: 200,
-    authorAvatar: 'https://i.pravatar.cc/300',
-    authorName: 'Sandra Tomsfield thimad adf adfad adfa',
+    author: {
+      id: 2,
+      name: 'Sandra Tomsfield thimad adf adfad adfa',
+      avatar: 'https://i.pravatar.cc/300',
+    },
     description:
       'Dont just stick to white and jollof rice! Try out this coconut rice recipe',
     image:
@@ -31,8 +38,11 @@ export default [
     title: 'Paella Fry rice',
     likes: 14,
     comments: 200,
-    authorAvatar: 'https://i.pravatar.cc/300',
-    authorName: 'Juicy Bob',
+    author: {
+      id: 1,
+      name: 'Juicy Bob',
+      avatar: 'https://i.pravatar.cc/300',
+    },
     description:
       'Dont just stick to white and jollof rice! Try out this coconut rice recipe',
     image:
