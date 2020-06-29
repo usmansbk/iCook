@@ -12,6 +12,8 @@ export const withOpacity = {
   primary: (val = 0.2) => `rgba(85, 140, 226, ${val})`,
   secondary: (val = 0.2) => `rgba(31, 36, 48, ${val})`,
   accent: (val = 0.2) => `rgba(85, 140, 226, ${val})`,
+  gray: (val = 0.7) => `rgba(51, 51, 51, ${val})`,
+  error: (val = 0.6) => `rgba(235, 87, 87, ${val})`,
 };
 
 export default light;

@@ -1,13 +1,19 @@
 import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 import Icon from './Icon';
-import colors from '../config/colors';
+import Text from './Text';
+import colors, {withOpacity} from '../config/colors';
 
 export default ({
+  label,
+  errorMessage,
   disabled = false,
   error = false,
+  icon,
+  iconSize = 22,
   onBlur = () => null,
   onFocus = () => null,
+  onChangeText = () => null,
   ...rest
 }) => {
   const [focused, setFocus] = React.useState(false);
@@ -22,7 +28,7 @@ export default ({
 
   const focusState = focused ? styles.active : styles.inactive;
 
-  const disabledState = disabled ? styles.inactive : {};
+  const disabledState = disabled ? styles.disabled : {};
   const errorState = error ? styles.error : {};
   const inputState = disabled
     ? styles.textInputInactive
@@ -30,28 +36,38 @@ export default ({
   const textError = error ? styles.textError : {};
 
   return (
-    <View style={[styles.border, focusState, disabledState, errorState]}>
-      <TextInput
-        editable={!disabled}
-        placeholder="Sample field"
-        style={[styles.textInput, inputState, textError]}
-        underlineColorAndroid="transparent"
-        autoCorrect={false}
-        onFocus={_setFocus}
-        onBlur={_setBlur}
-        {...rest}
-      />
-      <Icon size={22} />
+    <View>
+      {Boolean(label) && <Text>{label}</Text>}
+      <View style={[styles.border, focusState, disabledState, errorState]}>
+        <TextInput
+          editable={!disabled}
+          placeholder="Sample field"
+          style={[styles.textInput, inputState, textError]}
+          underlineColorAndroid="transparent"
+          autoCorrect={false}
+          onFocus={_setFocus}
+          onChangeText={onChangeText}
+          onBlur={_setBlur}
+          {...rest}
+        />
+        {Boolean(icon) && <Icon size={iconSize} name={icon} />}
+      </View>
+      {Boolean(errorMessage) && (
+        <Text style={styles.textError}>{errorMessage}</Text>
+      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 4,
+  },
   border: {
     borderWidth: 1,
     borderRadius: 3,
     width: 335,
-    margin: 4,
+    marginVertical: 4,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 20,
@@ -71,6 +87,10 @@ const styles = StyleSheet.create({
   inactive: {
     borderColor: colors.inactive,
   },
+  disabled: {
+    borderColor: colors.inactive,
+    backgroundColor: withOpacity.gray(0.05),
+  },
   textInputInactive: {
     color: colors.inactive,
   },
@@ -78,6 +98,6 @@ const styles = StyleSheet.create({
     borderColor: colors.error,
   },
   textError: {
-    color: colors.error,
+    color: withOpacity.error(0.6),
   },
 });
