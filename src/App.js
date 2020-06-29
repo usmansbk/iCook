@@ -1,11 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
-import Button from './common/Button';
+import {StatusBar} from 'react-native';
+import Welcome from './screens/Welcome';
 
 export default () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems:'center'}}>
-      <Button />
-    </View>
+    <>
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
+      <Welcome />
+    </>
   );
 };
