@@ -11,11 +11,11 @@ const sizes = {
   subtitle: 12,
 };
 
-export default ({children, style = [], size = 'body'}) => {
+export default ({children, style = {}, size = 'body'}) => {
   const fontSize = {
     fontSize: sizes[size],
   };
-  return <Text style={[styles.text, style, fontSize]}>{children}</Text>;
+  return <Text style={[styles.text, fontSize, style]}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({

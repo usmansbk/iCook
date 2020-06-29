@@ -23,4 +23,26 @@ export const withOpacity = {
   error: (val = 0.6) => `rgba(235, 87, 87, ${val})`,
 };
 
+export const avatarColors = [
+  '#8e44ad', //Wisteria
+  '#2980b9', // belize hole
+  '#27ae60', // nephritis,
+  '#2d3436', //dracula orchid
+  '#16a085', // green sea
+  '#e67e22', // carrot
+  '#d35400', // pumpkin
+  '#00cec9', // robin's egg blue
+];
+
+export const avatarColorsWithOpacity = {
+  '#8e44ad': 'rgba(142, 68, 173, 0.3)',
+  '#2980b9': 'rgba(41, 128, 185, 0.3)',
+  '#27ae60': 'rgba(39, 174, 96, 0.3)',
+  '#2d3436': 'rgba(45, 52, 54, 0.3)',
+  '#16a085': 'rgba(22, 160, 133, 0.3)',
+  '#e67e22': 'rgba(230, 126, 34, 0.3)',
+  '#d35400': 'rgba(211, 84, 0, 0.3)',
+  '#00cec9': 'rgba(0, 206, 201, 0.3)',
+};
+
 export default light;
