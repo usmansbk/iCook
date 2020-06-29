@@ -1,31 +1,51 @@
 import React from 'react';
 import {View, Image, StyleSheet} from 'react-native';
-import {IconButton} from 'react-native-paper';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
-import Icon from '../../common/Icon';
+import IconButton from '../../common/IconButton';
+import colors from '../../config/colors';
+import formatDistance from 'date-fns/formatDistanceToNow';
 
 export default class Item extends React.Component {
   render() {
     const {
       authorName,
       authorAvatar,
-      name,
       image,
+      title,
       likes,
-      commentsCount,
+      isLiked,
       date,
       description,
     } = this.props;
     return (
       <View style={styles.container}>
-        <View>
-          <Avatar uri={authorAvatar} name={authorAvatar} size="h3" />
-          <Text>{authorName}</Text>
-          <Text>{date}</Text>
+        <View style={styles.header}>
+          <View style={styles.row}>
+            <View style={styles.avatar}>
+              <Avatar uri={authorAvatar} name={authorAvatar} size="h3" />
+            </View>
+            <Text style={styles.name}>{authorName}</Text>
+          </View>
+          <Text>{formatDistance(new Date(date), {addSuffix: true})}</Text>
         </View>
-        <View>
-          <Image source={{uri: image}} style={styles.image} />
+        <Image source={{uri: image}} style={styles.image} />
+        <View style={styles.footer}>
+          <View style={styles.buttons}>
+            <View style={styles.row}>
+              <IconButton
+                color={isLiked ? colors.veryWeakRed : undefined}
+                name={`heart${isLiked ? '' : 'o'}`}
+              />
+              <IconButton name="message1" />
+            </View>
+            <IconButton name="sharealt" color={colors.primary} />
+          </View>
+          <View style={styles.footerBody}>
+            <Text style={styles.boldText}>{likes} likes</Text>
+            <Text style={styles.name}>{title}</Text>
+            <Text>{description}</Text>
+          </View>
         </View>
       </View>
     );
@@ -34,7 +54,37 @@ export default class Item extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 472,
-    width: 345,
+    height: 500,
+  },
+  image: {
+    height: 248,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingBottom: 8,
+  },
+  footer: {
+    paddingHorizontal: 10,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  boldText: {
+    fontFamily: 'Poppins-Bold',
+  },
+  name: {
+    fontFamily: 'Poppins-SemiBold',
+  },
+  avatar: {
+    marginRight: 8,
+  },
+  footerBody: {
+    paddingLeft: 10,
   },
 });

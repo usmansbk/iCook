@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     padding: 10,
+    paddingLeft: 20,
     alignItems: 'center',
   },
   avatar: {

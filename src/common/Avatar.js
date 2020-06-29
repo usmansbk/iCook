@@ -31,7 +31,7 @@ const TextAvatar = ({name = '', size, style, color}) => {
   );
 };
 
-export default ({name, size = 'h2', source}) => {
+export default ({name, size = 'h2', uri}) => {
   const diameter = sizes[size];
   const radius = diameter / 2;
   const color = getAvatarBackgroundColor(name);
@@ -43,10 +43,10 @@ export default ({name, size = 'h2', source}) => {
     backgroundColor,
   };
 
-  if (!source) {
+  if (!uri) {
     return <TextAvatar name={name} size={radius} style={style} color={color} />;
   }
-  return <ImageAvatar source={source} size style={style} />;
+  return <ImageAvatar source={{uri}} size style={style} />;
 };
 
 const textStyles = StyleSheet.create({
