@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionList, StyleSheet} from 'react-native';
+import {SectionList, StyleSheet, View} from 'react-native';
 import Ingredient from './Ingredient';
 import Step from './Step';
 import Health from './Health';
@@ -58,6 +58,10 @@ export default class Recipe extends React.Component {
     return <SectionHeader title={title} />;
   };
 
+  _renderFooter = () => {
+    return <View style={styles.footer} />;
+  };
+
   render() {
     const {data} = this.props;
     return (
@@ -65,6 +69,7 @@ export default class Recipe extends React.Component {
         contentContainerStyle={styles.container}
         renderSectionHeader={this._renderSectionHeader}
         sections={this.mapRecipeToSections(data)}
+        ListFooterComponent={this._renderFooter}
       />
     );
   }
@@ -73,5 +78,8 @@ export default class Recipe extends React.Component {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
+  },
+  footer: {
+    height: 100,
   },
 });
