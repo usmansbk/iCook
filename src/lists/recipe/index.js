@@ -4,6 +4,7 @@ import Ingredient from './Ingredient';
 import Step from './Step';
 import Health from './Health';
 import SectionHeader from './SectionHeader';
+import Item from '../dishes/Item';
 
 export default class Recipe extends React.Component {
   mapRecipeToSections = (recipe) => {
@@ -62,11 +63,42 @@ export default class Recipe extends React.Component {
     return <View style={styles.footer} />;
   };
 
+  _renderHeader = () => {
+    const {data} = this.props;
+    const {
+      id,
+      title,
+      description,
+      author,
+      likes,
+      commentsCount,
+      image,
+      createdAt,
+      isLiked,
+    } = data;
+    return (
+      <Item
+        disabled
+        id={id}
+        title={title}
+        description={description}
+        authorAvatar={author.avatar}
+        authorName={author.name}
+        likes={likes}
+        commentsCount={commentsCount}
+        image={image}
+        date={createdAt}
+        isLiked={isLiked}
+        onPressItem={this._onPressItem}
+      />
+    );
+  };
+
   render() {
     const {data} = this.props;
     return (
       <SectionList
-        contentContainerStyle={styles.container}
+        ListHeaderComponent={this._renderHeader}
         renderSectionHeader={this._renderSectionHeader}
         sections={this.mapRecipeToSections(data)}
         ListFooterComponent={this._renderFooter}
@@ -76,9 +108,6 @@ export default class Recipe extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 20,
-  },
   footer: {
     height: 100,
   },

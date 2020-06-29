@@ -21,6 +21,7 @@ export default class Ingredient extends React.Component {
 
 const styles = StyleSheet.create({
   row: {
+    paddingHorizontal: 20,
     flexDirection: 'row',
     marginVertical: 8,
   },

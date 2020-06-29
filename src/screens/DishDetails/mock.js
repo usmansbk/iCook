@@ -3,6 +3,7 @@ export default {
   id: '12',
   title: 'Paella Fry rice',
   likes: 14,
+  isLiked: true,
   comments: 200,
   author: {
     avatar: 'https://i.pravatar.cc/300',

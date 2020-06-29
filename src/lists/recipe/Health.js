@@ -15,5 +15,6 @@ export default class Ingredient extends React.Component {
 const styles = StyleSheet.create({
   container: {
     marginVertical: 10,
+    paddingHorizontal: 20,
   },
 });

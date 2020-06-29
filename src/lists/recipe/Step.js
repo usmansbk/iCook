@@ -23,6 +23,7 @@ export default class Step extends React.Component {
 const styles = StyleSheet.create({
   separator: {
     marginBottom: 40,
+    paddingHorizontal: 20,
   },
   container: {
     flexDirection: 'row',

@@ -11,6 +11,7 @@ export default class Item extends React.Component {
 
   render() {
     const {
+      disabled,
       authorName,
       authorAvatar,
       image,
@@ -21,7 +22,10 @@ export default class Item extends React.Component {
       description,
     } = this.props;
     return (
-      <TouchableOpacity onPress={this._onPress} style={styles.container}>
+      <TouchableOpacity
+        disabled={disabled}
+        onPress={this._onPress}
+        style={styles.container}>
         <View style={styles.header}>
           <View style={styles.avatar}>
             <Avatar uri={authorAvatar} name={authorAvatar} size="h3" />
