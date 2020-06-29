@@ -5,6 +5,7 @@ import TextInput from '../../common/TextInput';
 import Text from '../../common/Text';
 import Logo from '../../common/Logo';
 import Button from '../../common/Button';
+import Or from '../../common/Or';
 import colors from '../../config/colors';
 
 export default () => {
@@ -26,11 +27,20 @@ export default () => {
               icon="eye"
             />
             <TouchableOpacity>
-              <Text>Forgot password?</Text>
+              <Text style={styles.actionText}>Forgot password?</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.button}>
             <Button style={button} text="Log in" />
+          </View>
+          <Or />
+          <View style={styles.footer}>
+            <TouchableOpacity>
+              <Text style={styles.footerText}>
+                {"Don't have an account?"}{' '}
+                <Text style={styles.actionText}>Sign Up</Text>
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -46,8 +56,18 @@ const styles = StyleSheet.create({
     marginVertical: 12,
   },
   button: {
-    marginVertical: 40,
-  }
+    marginVertical: 36,
+  },
+  footer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  footerText: {
+    color: colors.buttonDarkGrey,
+  },
+  actionText: {
+    color: colors.primary,
+  },
 });
 
 const button = StyleSheet.create({

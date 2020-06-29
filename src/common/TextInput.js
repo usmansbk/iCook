@@ -5,6 +5,7 @@ import Text from './Text';
 import colors, {withOpacity} from '../config/colors';
 
 export default ({
+  secure,
   label,
   errorMessage,
   helperText,
@@ -51,7 +52,13 @@ export default ({
           onBlur={_setBlur}
           {...rest}
         />
-        {Boolean(icon) && <Icon size={iconSize} name={icon} />}
+        {Boolean(icon) && (
+          <Icon
+            size={iconSize}
+            color={focused ? colors.primary : undefined}
+            name={icon}
+          />
+        )}
       </View>
       {Boolean(errorMessage) && (
         <Text style={styles.textError}>{errorMessage}</Text>

@@ -9,6 +9,7 @@ const light = {
   darkGrey: '#333333',
   buttonLightGrey: '#ECEBEB',
   buttonDarkGrey: '#939090',
+  lineGrey: '#333333',
 };
 
 export const withOpacity = {
