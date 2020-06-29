@@ -5,6 +5,8 @@ import TextInput from '../../common/TextInput';
 import Text from '../../common/Text';
 import Logo from '../../common/Logo';
 import Button from '../../common/Button';
+import GoogleButton from '../../common/GoogleButton';
+import FacebookButton from '../../common/FacebookButton';
 import Or from '../../common/Or';
 import colors from '../../config/colors';
 
@@ -27,7 +29,7 @@ export default () => {
               icon="eye"
               secure
             />
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.nav}>
               <Text style={styles.actionText}>Forgot password?</Text>
             </TouchableOpacity>
           </View>
@@ -36,7 +38,9 @@ export default () => {
           </View>
           <Or />
           <View style={styles.footer}>
-            <TouchableOpacity>
+            <GoogleButton />
+            <FacebookButton />
+            <TouchableOpacity style={styles.nav}>
               <Text style={styles.footerText}>
                 {"Don't have an account?"}{' '}
                 <Text style={styles.actionText}>Sign Up</Text>
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     marginVertical: 12,
   },
   button: {
-    marginVertical: 36,
+    marginTop: 18,
   },
   footer: {
     justifyContent: 'center',
@@ -68,6 +72,9 @@ const styles = StyleSheet.create({
   },
   actionText: {
     color: colors.primary,
+  },
+  nav: {
+    paddingTop: 10,
   },
 });
 
