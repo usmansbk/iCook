@@ -46,7 +46,9 @@ export default ({
       {Boolean(label) && (
         <Text>
           {label}{' '}
-          {Boolean(required && !value) && <Icon name="exclamationcircle" />}
+          {Boolean(required && !value) && (
+            <Icon size={14} name="exclamationcircle" />
+          )}
         </Text>
       )}
       <View

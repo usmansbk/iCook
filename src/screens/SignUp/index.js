@@ -36,8 +36,15 @@ export default () => {
               icon="eye"
             />
           </View>
-          <View style={styles.field}>
-            <Button text="Sign up" disabled />
+          <View style={styles.row}>
+            <CheckBox />
+            <Text style={styles.footerText}>
+              {'I agree to the '}
+              <Text style={styles.actionText}>terms and conditions</Text>
+            </Text>
+          </View>
+          <View style={styles.submit}>
+            <Button text="Sign up" />
           </View>
           <View style={styles.footer}>
             <TouchableOpacity>
@@ -58,6 +65,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   footer: {
+    marginTop: 8,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -66,5 +74,12 @@ const styles = StyleSheet.create({
   },
   actionText: {
     color: colors.primary,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  submit: {
+    marginTop: 28,
   },
 });
