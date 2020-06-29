@@ -2,10 +2,11 @@ import React from 'react';
 import {IconButton} from 'react-native-paper';
 import Icon from './Icon';
 
-export default ({size, color, name}) => {
+export default ({size, color, name, onPress}) => {
   return (
     <IconButton
-      icon={({color, size}) => <Icon size={size} name={name} color={color} />}
+      onPress={onPress}
+      icon={({color: c, size: s}) => <Icon size={s} name={name} color={c} />}
     />
   );
 };

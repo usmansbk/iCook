@@ -1,9 +1,8 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {IconButton} from 'react-native-paper';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
-import Icon from '../../common/Icon';
+import IconButton from '../../common/IconButton';
 
 export default () => {
   const userName = 'Usman Suleiman';
@@ -17,12 +16,7 @@ export default () => {
         <Text style={styles.name}>Usman Suleiman</Text>
       </View>
       <View style={styles.right}>
-        <IconButton
-          onPress={() => null}
-          icon={({color, size}) => (
-            <Icon size={size} name="bells" color={color} />
-          )}
-        />
+        <IconButton onPress={() => null} name="bells" />
       </View>
     </View>
   );
