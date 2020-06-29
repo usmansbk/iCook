@@ -27,7 +27,14 @@ export default class Recipe extends React.Component {
       data: recipe.steps,
       title: 'PREPARATION',
       renderItem: ({item}) => {
-        return <Step id={item.id} _do={item.do} step={item.step} />;
+        return (
+          <Step
+            id={item.id}
+            _do={item.do}
+            step={item.step}
+            image={item.image}
+          />
+        );
       },
     };
 

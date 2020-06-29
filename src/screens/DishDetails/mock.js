@@ -75,11 +75,15 @@ export default {
       step: 1,
       do:
         'Sift flour with salt, baking powder, cinnamon and nutmeg and keep aside',
+      image:
+        'https://media.istockphoto.com/photos/homemade-glazed-yeast-donuts-picture-id1198710908?b=1&k=6&m=1198710908&s=170667a&w=0&h=q4SwuRnVrkb72lNYlmvtA0HyCzPQHAOm1qLSVmUvpwg=',
     },
     {
       id: 2,
       step: 2,
       do: 'Cream butter and sugar, Add eggs and beat well',
+      image:
+        'https://media.istockphoto.com/photos/homemade-glazed-yeast-donuts-picture-id1198710908?b=1&k=6&m=1198710908&s=170667a&w=0&h=q4SwuRnVrkb72lNYlmvtA0HyCzPQHAOm1qLSVmUvpwg=',
     },
     {
       id: 3,
@@ -91,6 +95,8 @@ export default {
       id: 4,
       step: 4,
       do: 'Roll the dough on a lightly floured surface to 1 inch thickness',
+      image:
+        'https://media.istockphoto.com/photos/homemade-glazed-yeast-donuts-picture-id1198710908?b=1&k=6&m=1198710908&s=170667a&w=0&h=q4SwuRnVrkb72lNYlmvtA0HyCzPQHAOm1qLSVmUvpwg=',
     },
     {
       id: 5,
