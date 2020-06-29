@@ -31,7 +31,7 @@ export default ({
     onBlur();
   };
 
-  const focusState = focused ? styles.active : styles.inactive;
+  const focusState = focused ? styles.active : {};
 
   const emptyState = value ? {} : styles.empty;
   const disabledState = disabled ? styles.disabled : {};
@@ -54,10 +54,10 @@ export default ({
       <View
         style={[
           styles.border,
-          focusState,
           disabledState,
           errorState,
           emptyState,
+          focusState,
         ]}>
         <TextInput
           value={value}
