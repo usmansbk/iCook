@@ -16,7 +16,7 @@ export default () => {
         <Text style={styles.name}>Usman Suleiman</Text>
       </View>
       <View style={styles.right}>
-        <IconButton onPress={() => null} name="bells" />
+        <IconButton onPress={() => null} name="plus" />
       </View>
     </View>
   );
