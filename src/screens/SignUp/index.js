@@ -33,6 +33,7 @@ export default () => {
               required
               label="Phone number"
               items={countryCodes}
+              dropdownPlaceholder="Telephone Prefix"
               placeholder="Enter your phone number"
               keyboardType="phone-pad"
             />

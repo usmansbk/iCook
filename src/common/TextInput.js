@@ -19,6 +19,7 @@ export default ({
   error = false,
   icon,
   iconSize = 20,
+  dropdownPlaceholder,
   onBlur = () => null,
   onFocus = () => null,
   onChangeText = () => null,
@@ -64,7 +65,7 @@ export default ({
         ]}>
         {Boolean(items) && (
           <View style={styles.dropdown}>
-            <Dropdown noStyle value={234} items={countryCodes} />
+            <Dropdown placeholder={dropdownPlaceholder} noStyle value={234} items={countryCodes} />
           </View>
         )}
         <TextInput
