@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
   },
   name: {
     fontFamily: 'Poppins-SemiBold',
-    flex: 1,
   },
   avatar: {
     marginRight: 8,
