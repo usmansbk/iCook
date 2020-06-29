@@ -5,8 +5,10 @@ import Header from '../../common/Header';
 import Text from '../../common/Text';
 import TextInput from '../../common/TextInput';
 import CheckBox from '../../common/Checkbox';
+import Dropdown from '../../common/Dropdown';
 import Button from '../../common/Button';
 import colors from '../../config/colors';
+import {gender} from '../../lib/constants';
 
 export default () => {
   return (
@@ -25,7 +27,12 @@ export default () => {
             />
           </View>
           <View style={styles.field}>
-            <TextInput required label="Gender" placeholder="Select gender" />
+            <Dropdown
+              required
+              label="Gender"
+              placeholder="Select gender"
+              items={gender}
+            />
           </View>
           <View style={styles.field}>
             <TextInput

@@ -15,7 +15,7 @@ export default ({
   disabled = false,
   error = false,
   icon,
-  iconSize = 22,
+  iconSize = 20,
   onBlur = () => null,
   onFocus = () => null,
   onChangeText = () => null,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 8,
   },
   textInput: {
     height: 40,
