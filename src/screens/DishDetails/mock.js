@@ -59,8 +59,8 @@ export default {
     {
       id: 8,
       quantity: 2,
-      unit: 'eggs',
-      of: 'beaten well',
+      unit: '',
+      of: 'eggs beaten well',
     },
     {
       id: 9,

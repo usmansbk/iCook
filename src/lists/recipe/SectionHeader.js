@@ -30,7 +30,6 @@ export default class Ingredient extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 43,
     justifyContent: 'center',
     alignItems: 'center',
   },
