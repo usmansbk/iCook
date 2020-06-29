@@ -9,13 +9,13 @@ export default ({
   disabled,
   onPress = () => null,
 }) => {
-  const active = disabled ? styles.inactive : styles.active;
+  const active = disabled ? styles.inactive : style.button || styles.active;
   const label = disabled ? styles.inactiveLabel : styles.activeLabel;
 
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.container, active, style.button]}
+      style={[styles.container, active]}
       disabled={disabled}>
       <View style={styles.primary}>
         <Text style={[label, style.label]} size="body">
