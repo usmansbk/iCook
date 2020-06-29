@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: 'white',
     elevation: 0,
-    paddingTop: 10,
+    paddingVertical: 10,
   },
   content: {
     justifyContent: 'center',

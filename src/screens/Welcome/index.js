@@ -1,37 +1,35 @@
 import React from 'react';
 import {StyleSheet, Image, View} from 'react-native';
-import Container from '../../common/Container';
 import Button from '../../common/Button';
 
 export default () => {
   return (
-    <Container>
-      <View style={styles.container}>
-        <View style={styles.head}>
-          <View style={styles.logo}>
-            <Image
-              resizeMode="contain"
-              style={styles.image}
-              source={require('../../assets/images/logo.png')}
-            />
-            <Image
-              resizeMode="contain"
-              style={styles.icook}
-              source={require('../../assets/images/iCook.png')}
-            />
-          </View>
-        </View>
-        <View style={styles.button}>
-          <Button text="Get started" />
+    <View style={styles.container}>
+      <View style={styles.head}>
+        <View style={styles.logo}>
+          <Image
+            resizeMode="contain"
+            style={styles.image}
+            source={require('../../assets/images/logo.png')}
+          />
+          <Image
+            resizeMode="contain"
+            style={styles.icook}
+            source={require('../../assets/images/iCook.png')}
+          />
         </View>
       </View>
-    </Container>
+      <View style={styles.button}>
+        <Button text="Get started" />
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
+    alignItems: 'center',
     flex: 1,
   },
   head: {

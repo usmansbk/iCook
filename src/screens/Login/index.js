@@ -55,6 +55,7 @@ export default () => {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 40,
     alignItems: 'center',
   },
   input: {

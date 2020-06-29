@@ -1,15 +1,24 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 
 export default ({children}) => {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <ScrollView
+      style={styles.style}
+      keyboardShouldPersistTaps="always"
+      contentContainerStyle={styles.container}>
+      {children}
+    </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  style: {
     backgroundColor: 'white',
   },
 });
