@@ -25,6 +25,7 @@ export default () => {
               label="Password"
               placeholder="Enter your password"
               icon="eye"
+              secure
             />
             <TouchableOpacity>
               <Text style={styles.actionText}>Forgot password?</Text>

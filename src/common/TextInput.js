@@ -6,6 +6,7 @@ import colors, {withOpacity} from '../config/colors';
 
 export default ({
   secure,
+  value = '',
   label,
   errorMessage,
   helperText,
@@ -42,6 +43,7 @@ export default ({
       {Boolean(label) && <Text>{label}</Text>}
       <View style={[styles.border, focusState, disabledState, errorState]}>
         <TextInput
+          value={value}
           editable={!disabled}
           placeholder="Sample field"
           style={[styles.textInput, inputState, textError]}
@@ -49,6 +51,7 @@ export default ({
           autoCorrect={false}
           onFocus={_setFocus}
           onChangeText={onChangeText}
+          secureTextEntry={secure}
           onBlur={_setBlur}
           {...rest}
         />
