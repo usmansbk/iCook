@@ -7,12 +7,13 @@ import ForgotPassword from './screens/ForgotPassword';
 import SignUp from './screens/SignUp';
 import Home from './screens/Home';
 import Favorites from './screens/Favorites';
+import DishDetails from './screens/DishDetails';
 
 export default () => {
   return (
     <>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <Favorites />
+      <DishDetails />
     </>
   );
 };

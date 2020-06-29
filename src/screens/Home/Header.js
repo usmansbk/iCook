@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 20,
     alignItems: 'center',
+    backgroundColor: 'white',
   },
   avatar: {
     paddingRight: 8,

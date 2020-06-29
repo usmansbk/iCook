@@ -1,13 +1,11 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Header from '../../common/Header';
-import Dishes from '../../lists/dishes';
 
 export default () => {
   return (
     <View style={styles.container}>
-      <Header title="Favourites" />
-      <Dishes />
+      <Header goBack={() => null} title="Recipe" />
     </View>
   );
 };
