@@ -12,3 +12,10 @@ export const gender = [
     value: 'others',
   },
 ];
+
+export const countryCodes = [
+  {
+    label: '+234',
+    value: 234,
+  },
+];

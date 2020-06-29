@@ -8,7 +8,7 @@ import CheckBox from '../../common/Checkbox';
 import Dropdown from '../../common/Dropdown';
 import Button from '../../common/Button';
 import colors from '../../config/colors';
-import {gender} from '../../lib/constants';
+import {gender, countryCodes} from '../../lib/constants';
 
 export default () => {
   return (
@@ -24,6 +24,16 @@ export default () => {
               required
               label="Email"
               placeholder="Enter your email address"
+              keyboardType="email-address"
+            />
+          </View>
+          <View style={styles.field}>
+            <TextInput
+              required
+              label="Phone number"
+              items={countryCodes}
+              placeholder="Enter your phone number"
+              keyboardType="phone-pad"
             />
           </View>
           <View style={styles.field}>

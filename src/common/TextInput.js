@@ -2,13 +2,16 @@ import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 import Icon from './Icon';
 import Text from './Text';
+import Dropdown from './Dropdown';
 import colors, {withOpacity} from '../config/colors';
+import {countryCodes} from '../lib/constants';
 
 export default ({
   secure,
   required,
   value = '',
   label,
+  items,
   placeholder,
   errorMessage,
   helperText,
@@ -59,6 +62,11 @@ export default ({
           emptyState,
           focusState,
         ]}>
+        {Boolean(items) && (
+          <View style={styles.dropdown}>
+            <Dropdown noStyle value={234} items={countryCodes} />
+          </View>
+        )}
         <TextInput
           value={value}
           editable={!disabled}
@@ -93,6 +101,9 @@ export default ({
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 4,
+  },
+  dropdown: {
+    width: 80,
   },
   border: {
     borderWidth: 1,

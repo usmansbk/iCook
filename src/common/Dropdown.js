@@ -9,21 +9,29 @@ export default ({
   disabled,
   label,
   value,
-  placeholder,
+  placeholder = 'Select',
   items = [],
+  noStyle,
   onValueChange = () => null,
 }) => {
   return (
     <View>
       {Boolean(label) && <Text style={styles.label}>{label}</Text>}
-      <View style={styles.border}>
+      <View style={!noStyle && styles.border}>
         <RNPickerSelect
           disabled={disabled}
           value={value}
           items={items}
           useNativeAndroidPickerStyle={false}
           onValueChange={onValueChange}
-          pickerProps={{}}
+          pickerProps={{
+            itemStyle: {
+              fontFamily: 'Poppins-Regular',
+            },
+          }}
+          textInputProps={{
+            placeholderTextColor: colors.inactive,
+          }}
           placeholder={{
             color: colors.inactive,
             label: placeholder,
