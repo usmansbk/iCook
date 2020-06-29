@@ -57,8 +57,6 @@ const customStyle = {
     textAlignVertical: 'center',
     padding: 8,
     margin: 0,
-    color: colors.inactive,
-    // backgroundColor: withOpacity.gray(0.05),
   },
   placeholder: {
     color: colors.inactive,
