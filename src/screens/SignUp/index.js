@@ -18,14 +18,14 @@ export default () => {
             <TextInput required label="Name" placeholder="Enter your name" />
           </View>
           <View style={styles.field}>
-            <TextInput required label="Gender" placeholder="Select gender" />
-          </View>
-          <View style={styles.field}>
             <TextInput
               required
-              label="Phone number"
-              placeholder="Enter your phone number"
+              label="Email"
+              placeholder="Enter your email address"
             />
+          </View>
+          <View style={styles.field}>
+            <TextInput required label="Gender" placeholder="Select gender" />
           </View>
           <View style={styles.field}>
             <TextInput
