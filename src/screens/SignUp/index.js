@@ -12,6 +12,8 @@ import colors from '../../config/colors';
 import {gender, countryCodes} from '../../lib/constants';
 
 export default () => {
+  const [showPassword, setShowPassword] = React.useState(false);
+  const _toggleVisibility = () => setShowPassword(!showPassword);
   return (
     <>
       <Header goBack={() => null} title="Create an account" />
@@ -48,11 +50,12 @@ export default () => {
           </View>
           <View style={styles.field}>
             <TextInput
-              secure
+              secure={showPassword}
               required
               label="Password"
               placeholder="Enter your password"
               icon="eye"
+              onPressIcon={_toggleVisibility}
             />
           </View>
           <PasswordStrength />

@@ -23,6 +23,7 @@ export default ({
   onBlur = () => null,
   onFocus = () => null,
   onChangeText = () => null,
+  onPressIcon = () => null,
   ...rest
 }) => {
   const [focused, setFocus] = React.useState(false);
@@ -88,6 +89,7 @@ export default ({
         />
         {Boolean(icon) && (
           <Icon
+            onPress={onPressIcon}
             size={iconSize}
             color={focused ? colors.primary : undefined}
             name={icon}
