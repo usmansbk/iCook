@@ -8,6 +8,7 @@ const light = {
   error: '#FF0000',
   darkGrey: '#333333',
   buttonLightGrey: '#ECEBEB',
+  buttonDarkGrey: '#939090',
 };
 
 export const withOpacity = {

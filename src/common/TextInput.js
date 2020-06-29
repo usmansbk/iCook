@@ -7,6 +7,7 @@ import colors, {withOpacity} from '../config/colors';
 export default ({
   label,
   errorMessage,
+  helperText,
   disabled = false,
   error = false,
   icon,
@@ -55,6 +56,9 @@ export default ({
       {Boolean(errorMessage) && (
         <Text style={styles.textError}>{errorMessage}</Text>
       )}
+      {Boolean(helperText && !errorMessage) && (
+        <Text style={styles.helperText}>{helperText}</Text>
+      )}
     </View>
   );
 };
@@ -99,5 +103,8 @@ const styles = StyleSheet.create({
   },
   textError: {
     color: withOpacity.error(0.6),
+  },
+  helperText: {
+    color: withOpacity.primary(0.6),
   },
 });

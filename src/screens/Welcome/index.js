@@ -52,6 +52,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    marginVertical: 72,
+    marginVertical: 100,
   },
 });
