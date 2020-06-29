@@ -10,6 +10,9 @@ const light = {
   buttonLightGrey: '#ECEBEB',
   buttonDarkGrey: '#939090',
   lineGrey: '#333333',
+  goodGreen: '#4AE930',
+  weakYellow: '#D3B134',
+  veryWeakRed: '#EB5757',
 };
 
 export const withOpacity = {

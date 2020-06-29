@@ -7,6 +7,7 @@ import TextInput from '../../common/TextInput';
 import CheckBox from '../../common/Checkbox';
 import Dropdown from '../../common/Dropdown';
 import Button from '../../common/Button';
+import PasswordStrength from '../../common/PasswordStrength';
 import colors from '../../config/colors';
 import {gender, countryCodes} from '../../lib/constants';
 
@@ -53,6 +54,7 @@ export default () => {
               icon="eye"
             />
           </View>
+          <PasswordStrength />
           <View style={styles.row}>
             <CheckBox />
             <Text style={styles.footerText}>
