@@ -65,7 +65,12 @@ export default ({
         ]}>
         {Boolean(items) && (
           <View style={styles.dropdown}>
-            <Dropdown placeholder={dropdownPlaceholder} noStyle value={234} items={countryCodes} />
+            <Dropdown
+              placeholder={dropdownPlaceholder}
+              noStyle
+              value={234}
+              items={countryCodes}
+            />
           </View>
         )}
         <TextInput
