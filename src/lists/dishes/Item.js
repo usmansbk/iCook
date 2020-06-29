@@ -47,7 +47,7 @@ export default class Item extends React.Component {
           </View>
           <View style={styles.footerBody}>
             <Text style={styles.boldText}>{likes} likes</Text>
-            <Text style={styles.name}>{title}</Text>
+            <Text style={styles.title}>{title}</Text>
             <Text numberOfLines={2}>{description}</Text>
           </View>
         </View>
@@ -82,6 +82,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
   },
   name: {
+    fontFamily: 'Poppins-SemiBold',
+    flex: 1,
+  },
+  title: {
     fontFamily: 'Poppins-SemiBold',
   },
   avatar: {
