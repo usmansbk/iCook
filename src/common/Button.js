@@ -10,7 +10,9 @@ export default ({text = 'Button', disabled, onPress}) => {
   return (
     <TouchableOpacity style={[styles.container, active]} disabled={disabled}>
       <View style={styles.primary}>
-        <Text style={label}>{text}</Text>
+        <Text style={label} size="body">
+          {text}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -21,6 +23,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 335,
     borderRadius: 5,
+    margin: 4,
   },
   primary: {
     flex: 1,

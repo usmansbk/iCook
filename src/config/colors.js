@@ -3,6 +3,9 @@ const light = {
   secondary: '#1f2430',
   accent: '#9B9B9B',
   disabled: '#d6d9df',
+  inactive: '#BCBDC1',
+  text: '#1F2430',
+  error: '#FF0000',
 };
 
 export const withOpacity = {

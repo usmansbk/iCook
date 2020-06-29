@@ -2,8 +2,20 @@ import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 import colors from '../config/colors';
 
-export default ({children, style = []}) => {
-  return <Text style={[styles.text, style]}>{children}</Text>;
+const sizes = {
+  h1: 24,
+  h2: 20,
+  h3: 18,
+  body: 14,
+  buttons: 18,
+  subtitle: 12,
+};
+
+export default ({children, style = [], size = 'body'}) => {
+  const fontSize = {
+    fontSize: sizes[size],
+  };
+  return <Text style={[styles.text, style, fontSize]}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({
