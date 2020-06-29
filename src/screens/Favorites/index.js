@@ -6,7 +6,7 @@ import Dishes from '../../lists/dishes';
 export default () => {
   return (
     <View style={styles.container}>
-      <Header title="Favourites" />
+      <Header title="My Likes" />
       <Dishes />
     </View>
   );

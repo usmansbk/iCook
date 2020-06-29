@@ -13,7 +13,7 @@ export default () => {
   return (
     <>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <DishDetails />
+      <Favorites/>
     </>
   );
 };
