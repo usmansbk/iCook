@@ -32,16 +32,19 @@ const styles = StyleSheet.create({
 
 const pages = [
   {
+    key: 1,
     image: require('./img/1.png'),
     title: 'Find foods you love',
     subtitle: 'Learn new recipe from other chefs and create that food you love',
   },
   {
+    key: 2,
     image: require('./img/2.png'),
     title: 'Capture hearts',
     subtitle: 'Nothing says home like the smell of baking',
   },
   {
+    key: 3,
     image: require('./img/3.png'),
     title: 'Share your Recipe',
     subtitle: 'Share your unique cooking recipe with a host of other chefs.',
@@ -52,7 +55,7 @@ export default () => {
   return (
     <Swiper loop={false} style={styles.swiper} activeDotColor={colors.primary}>
       {pages.map((page) => (
-        <View style={styles.page}>
+        <View style={styles.page} key={page.key}>
           <Image
             resizeMode="contain"
             style={styles.image}
