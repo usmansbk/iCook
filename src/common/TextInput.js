@@ -116,7 +116,6 @@ const styles = StyleSheet.create({
   border: {
     borderWidth: 1,
     borderRadius: 3,
-    width: 335,
     marginVertical: 4,
     flexDirection: 'row',
     alignItems: 'center',

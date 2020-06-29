@@ -156,7 +156,8 @@ export const comments = {
         name: 'Scott Martial',
         avatar: 'https://i.pravatar.cc/300',
       },
-      message: 'This really helped me alot, than you',
+      message: 'This really helped me alot, thank you',
+      createdAt: new Date().toISOString(),
     },
   ],
 };

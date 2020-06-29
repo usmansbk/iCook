@@ -5,6 +5,7 @@ import Step from './Step';
 import Health from './Health';
 import SectionHeader from './SectionHeader';
 import Item from '../dishes/Item';
+import Comments from './Comments';
 
 export default class Recipe extends React.Component {
   mapRecipeToSections = (recipe) => {
@@ -60,7 +61,7 @@ export default class Recipe extends React.Component {
   };
 
   _renderFooter = () => {
-    return <View style={styles.footer} />;
+    return <Comments />;
   };
 
   _renderHeader = () => {
