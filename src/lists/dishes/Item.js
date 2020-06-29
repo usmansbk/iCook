@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
+import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import IconButton from '../../common/IconButton';
@@ -7,6 +7,8 @@ import colors from '../../config/colors';
 import formatDistance from 'date-fns/formatDistanceToNow';
 
 export default class Item extends React.Component {
+  _onPress = () => null;
+
   render() {
     const {
       authorName,
@@ -19,15 +21,17 @@ export default class Item extends React.Component {
       description,
     } = this.props;
     return (
-      <View style={styles.container}>
+      <TouchableOpacity onPress={this._onPress} style={styles.container}>
         <View style={styles.header}>
-          <View style={styles.row}>
-            <View style={styles.avatar}>
-              <Avatar uri={authorAvatar} name={authorAvatar} size="h3" />
-            </View>
-            <Text style={styles.name}>{authorName}</Text>
+          <View style={styles.avatar}>
+            <Avatar uri={authorAvatar} name={authorAvatar} size="h3" />
           </View>
-          <Text>{formatDistance(new Date(date), {addSuffix: true})}</Text>
+          <Text numberOfLines={1} style={styles.name}>
+            {authorName}
+          </Text>
+          <Text style={styles.date}>
+            {formatDistance(new Date(date), {addSuffix: true})}
+          </Text>
         </View>
         <Image source={{uri: image}} style={styles.image} />
         <View style={styles.footer}>
@@ -44,10 +48,10 @@ export default class Item extends React.Component {
           <View style={styles.footerBody}>
             <Text style={styles.boldText}>{likes} likes</Text>
             <Text style={styles.name}>{title}</Text>
-            <Text>{description}</Text>
+            <Text numberOfLines={2}>{description}</Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -61,7 +65,6 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     paddingHorizontal: 20,
     paddingBottom: 8,
   },
@@ -80,6 +83,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontFamily: 'Poppins-SemiBold',
+    flex: 1,
   },
   avatar: {
     marginRight: 8,
@@ -87,4 +91,5 @@ const styles = StyleSheet.create({
   footerBody: {
     paddingLeft: 10,
   },
+  date: {},
 });

@@ -4,8 +4,10 @@ import Item from './Item';
 import data from './mock';
 
 export default class Dishes extends React.Component {
+  _onPressItem = (id) => null;
   _renderItem = ({item}) => {
     const {
+      id,
       title,
       description,
       authorName,
@@ -18,6 +20,7 @@ export default class Dishes extends React.Component {
     } = item;
     return (
       <Item
+        id={id}
         title={title}
         description={description}
         authorAvatar={authorAvatar}
@@ -27,6 +30,7 @@ export default class Dishes extends React.Component {
         image={image}
         date={createdAt}
         isLiked={isLiked}
+        onPressItem={this._onPressItem}
       />
     );
   };
