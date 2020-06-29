@@ -5,12 +5,13 @@ import Onboarding from './screens/Onboarding';
 import Login from './screens/Login';
 import ForgotPassword from './screens/ForgotPassword';
 import SignUp from './screens/SignUp';
+import Home from './screens/Home';
 
 export default () => {
   return (
     <>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <SignUp />
+      <Home />
     </>
   );
 };
