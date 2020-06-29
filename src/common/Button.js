@@ -3,17 +3,22 @@ import {View, TouchableOpacity, StyleSheet} from 'react-native';
 import colors, {withOpacity} from '../config/colors';
 import Text from './Text';
 
-export default ({text = 'Button', disabled, onPress = () => null}) => {
+export default ({
+  style = {},
+  text = 'Button',
+  disabled,
+  onPress = () => null,
+}) => {
   const active = disabled ? styles.inactive : styles.active;
   const label = disabled ? styles.inactiveLabel : styles.activeLabel;
 
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.container, active]}
+      style={[styles.container, active, style.button]}
       disabled={disabled}>
       <View style={styles.primary}>
-        <Text style={label} size="body">
+        <Text style={[label, style.label]} size="body">
           {text}
         </Text>
       </View>
@@ -27,6 +32,7 @@ const styles = StyleSheet.create({
     width: 335,
     borderRadius: 5,
     margin: 4,
+    marginVertical: 8,
   },
   primary: {
     flex: 1,
