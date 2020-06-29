@@ -6,8 +6,10 @@ import colors, {withOpacity} from '../config/colors';
 
 export default ({
   secure,
+  required,
   value = '',
   label,
+  placeholder,
   errorMessage,
   helperText,
   disabled = false,
@@ -31,6 +33,7 @@ export default ({
 
   const focusState = focused ? styles.active : styles.inactive;
 
+  const emptyState = value ? {} : styles.empty;
   const disabledState = disabled ? styles.disabled : {};
   const errorState = error ? styles.error : {};
   const inputState = disabled
@@ -40,12 +43,24 @@ export default ({
 
   return (
     <View>
-      {Boolean(label) && <Text>{label}</Text>}
-      <View style={[styles.border, focusState, disabledState, errorState]}>
+      {Boolean(label) && (
+        <Text>
+          {label}{' '}
+          {Boolean(required && !value) && <Icon name="exclamationcircle" />}
+        </Text>
+      )}
+      <View
+        style={[
+          styles.border,
+          focusState,
+          disabledState,
+          errorState,
+          emptyState,
+        ]}>
         <TextInput
           value={value}
           editable={!disabled}
-          placeholder="Sample field"
+          placeholder={placeholder}
           style={[styles.textInput, inputState, textError]}
           underlineColorAndroid="transparent"
           autoCorrect={false}
@@ -103,6 +118,10 @@ const styles = StyleSheet.create({
   },
   disabled: {
     borderColor: colors.inactive,
+    backgroundColor: withOpacity.gray(0.05),
+  },
+  empty: {
+    borderColor: withOpacity.gray(0.05),
     backgroundColor: withOpacity.gray(0.05),
   },
   textInputInactive: {
