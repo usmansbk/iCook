@@ -33,7 +33,7 @@ const HomeTab = () => {
           } else if (route.name === 'Likes') {
             iconName = 'heart' + (focused ? '' : 'o');
           } else if (route.name === 'Account') {
-            iconName = 'user';
+            iconName = 'setting';
           }
           return <Icon name={iconName} color={color} size={size} />;
         },

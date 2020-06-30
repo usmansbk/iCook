@@ -5,6 +5,11 @@ export default [
     icon: 'edit',
   },
   {
+    id: 'account',
+    title: 'Account settings',
+    icon: 'user',
+  },
+  {
     id: 'notifications',
     title: 'Notifications',
     icon: 'bells',
