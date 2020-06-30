@@ -15,6 +15,10 @@ export default ({navigation}) => {
     () => navigation.navigate('changeemail'),
     [navigation],
   );
+  const _toChangeGender = React.useCallback(
+    () => navigation.navigate('changegender'),
+    [navigation],
+  );
   const {
     email = 'usmansbk@gmail.com',
     gender = 'Male',
@@ -31,7 +35,7 @@ export default ({navigation}) => {
           subtitle="Change password"
           onPress={_toChangePassword}
         />
-        <Item title="Gender" subtitle={gender} />
+        <Item title="Gender" subtitle={gender} onPress={_toChangeGender} />
         <Item title="Country/region" subtitle={country} />
         <Item title="Socials login options" />
         <Item title="App theme" subtitle={theme} />

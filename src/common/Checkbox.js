@@ -4,7 +4,7 @@ import Icon from './Icon';
 import colors, {withOpacity} from '../config/colors';
 
 export default ({
-  checked = true,
+  checked = false,
   onPress = () => null,
   style = {},
   disabled,

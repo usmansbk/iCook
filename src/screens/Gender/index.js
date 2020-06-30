@@ -1,38 +1,35 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import TextInput from '../../common/TextInput';
+import Checkbox from '../../common/Checkbox';
 import Header from '../../common/Header';
 import Button from '../../common/Button';
+import Text from '../../common/Text';
+
+const Item = ({value, checked}) => {
+  return (
+    <View style={styles.checkbox}>
+      <Checkbox checked={checked} />
+      <Text style={styles.text} size="h2">
+        {value}
+      </Text>
+    </View>
+  );
+};
 
 export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
   return (
     <>
-      <Header goBack={_goBack} title="Password" />
+      <Header goBack={_goBack} title="Gender" />
       <View style={styles.container}>
         <View style={styles.field}>
-          <TextInput
-            label="Current password"
-            placeholder="Enter your current password"
-            secure
-            icon="eye"
-          />
+          <Item value="Female" />
         </View>
         <View style={styles.field}>
-          <TextInput
-            label="New password"
-            secure
-            icon="eye"
-            placeholder="Enter your new password"
-          />
+          <Item value="Male" checked />
         </View>
         <View style={styles.field}>
-          <TextInput
-            label="Confirm new password"
-            secure
-            icon="eye"
-            placeholder="Enter your new password again"
-          />
+          <Item value="Non-Binary" />
         </View>
         <Button text="Done" />
       </View>
@@ -48,5 +45,11 @@ const styles = StyleSheet.create({
   },
   field: {
     marginBottom: 30,
+  },
+  checkbox: {
+    flexDirection: 'row',
+  },
+  text: {
+    marginLeft: 12,
   },
 });

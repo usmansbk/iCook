@@ -8,7 +8,7 @@ export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
   return (
     <>
-      <Header goBack={_goBack} title="Change email" />
+      <Header goBack={_goBack} title="Email" />
       <View style={styles.container}>
         <View style={styles.field}>
           <TextInput label="Email" placeholder="Enter your new email here" />
