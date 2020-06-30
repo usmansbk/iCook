@@ -9,7 +9,7 @@ export default class Profile extends React.Component {
     return <Header />;
   };
 
-  _onPressItem = (id) => null;
+  _onPressItem = (id) => this.props.navigation.navigate('details', {id});
   _renderItem = ({item}) => {
     const {
       id,
@@ -41,6 +41,7 @@ export default class Profile extends React.Component {
   render() {
     return (
       <FlatList
+        initialNumToRender={1}
         ListHeaderComponent={this._renderHeader}
         renderItem={this._renderItem}
         data={mock}

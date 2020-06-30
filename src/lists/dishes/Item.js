@@ -15,7 +15,7 @@ import colors from '../../config/colors';
 import formatDistance from 'date-fns/formatDistanceToNow';
 
 export default class Item extends React.Component {
-  _onPress = () => null;
+  _onPress = () => this.props.onPressItem(this.props.id);
 
   render() {
     const {

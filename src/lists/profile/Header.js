@@ -2,7 +2,6 @@ import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import numeral from 'numeral';
 import Avatar from '../../common/Avatar';
-import Header from '../../common/Header';
 import Text from '../../common/Text';
 import Button from '../../common/Button';
 import colors from '../../config/colors';
@@ -35,7 +34,6 @@ export default ({
 }) => {
   return (
     <View style={styles.container}>
-      <Header goBack={() => null} title="Profile" />
       <View style={styles.container}>
         <View style={styles.header}>
           <Avatar size="h1" uri={avatar} name={name} />

@@ -4,7 +4,7 @@ import Item from './Item';
 import data from './mock';
 
 export default class Dishes extends React.Component {
-  _onPressItem = (id) => null;
+  _onPressItem = (id) => this.props.navigation.navigate('details', {id});
   _renderItem = ({item}) => {
     const {
       id,

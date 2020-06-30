@@ -1,13 +1,13 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import IconButton from '../../common/IconButton';
 
-export default () => {
+export default ({onPress}) => {
   const userName = 'Usman Suleiman';
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <View style={styles.avatar}>
         <Avatar size="h3" name={userName} />
       </View>
@@ -18,7 +18,7 @@ export default () => {
       <View style={styles.right}>
         <IconButton onPress={() => null} name="plus" />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
