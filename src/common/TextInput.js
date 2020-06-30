@@ -37,7 +37,7 @@ export default ({
     onBlur();
   };
 
-  const focusState = focused ? styles.active : styles.default;
+  const focusState = focused ? styles.active : {};
 
   const emptyState = value ? {} : styles.empty;
   const disabledState = disabled ? styles.disabled : {};
@@ -60,8 +60,8 @@ export default ({
           styles.border,
           disabledState,
           errorState,
-          focusState,
           emptyState,
+          focusState,
         ]}>
         {Boolean(items) && (
           <View style={styles.dropdown}>
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 8,
+    borderColor: colors.inactive,
   },
   textInput: {
     minHeight: 40,
