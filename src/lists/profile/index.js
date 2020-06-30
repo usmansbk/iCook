@@ -19,6 +19,7 @@ export default class Profile extends React.Component {
       description,
       author,
       reviews,
+      rating,
       commentsCount,
       images,
       createdAt,
@@ -32,6 +33,7 @@ export default class Profile extends React.Component {
         authorAvatar={author.avatar}
         authorName={author.name}
         reviews={reviews}
+        rating={rating}
         commentsCount={commentsCount}
         images={images}
         date={createdAt}
