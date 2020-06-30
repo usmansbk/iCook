@@ -20,7 +20,7 @@ export default class Profile extends React.Component {
       author,
       likes,
       commentsCount,
-      image,
+      images,
       createdAt,
       isLiked,
     } = item;
@@ -33,7 +33,7 @@ export default class Profile extends React.Component {
         authorName={author.name}
         likes={likes}
         commentsCount={commentsCount}
-        image={image}
+        images={images}
         date={createdAt}
         isLiked={isLiked}
         onPressItem={this._onPressItem}
