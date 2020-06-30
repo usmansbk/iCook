@@ -23,6 +23,10 @@ export default ({navigation}) => {
     () => navigation.navigate('changeregion'),
     [navigation],
   );
+  const _toLoginOptions = React.useCallback(
+    () => navigation.navigate('loginoptions'),
+    [navigation],
+  );
   const {
     email = 'usmansbk@gmail.com',
     gender = 'Male',
@@ -45,7 +49,7 @@ export default ({navigation}) => {
           subtitle={country}
           onPress={_toChangeRegion}
         />
-        <Item title="Socials login options" />
+        <Item title="Socials login options" onPress={_toLoginOptions} />
         <Item title="App theme" subtitle={theme} />
         <Item
           color={colors.veryWeakRed}
