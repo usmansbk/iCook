@@ -26,7 +26,7 @@ export default class Account extends React.Component {
   };
 
   _renderItem = ({item}) => {
-    const {title, icon, id, route} = item;
+    const {title, icon, id, route, navIcon} = item;
     const color = id === 'logout' ? colors.veryWeakRed : colors.text;
     const onPress = () => {
       if (route) {
@@ -41,7 +41,7 @@ export default class Account extends React.Component {
             {title}
           </Text>
         </View>
-        {id !== 'logout' && <Icon size={24} name="right" />}
+        {id !== 'logout' && <Icon size={24} name={navIcon || 'right'} />}
       </TouchableOpacity>
     );
   };
