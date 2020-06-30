@@ -11,7 +11,7 @@ import DishDetails from './screens/DishDetails';
 import Profile from './screens/Profile';
 import Account from './screens/Account';
 
-export default () => {
+export default function App() {
   return (
     <>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
