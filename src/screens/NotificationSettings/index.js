@@ -6,12 +6,20 @@ import Text from '../../common/Text';
 
 export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
-  const {activityOnPost = false, newsletter = true, autoUpdate = true} = {};
+  const {
+    like = true,
+    pin = true,
+    comment = true,
+    newsletter = true,
+    autoUpdate = false,
+  } = {};
   return (
     <>
       <Header goBack={_goBack} title="Notifications" />
       <View style={styles.container}>
-        <Item title="Activity on posts" value={activityOnPost} />
+        <Item title="Liked my recipes" value={like} />
+        <Item title="Pinned my recipes" value={pin} />
+        <Item title="Comment on my recipes" value={comment} />
         <Item title="Newsletter" value={newsletter} />
         <Item title="Auto update App" value={autoUpdate} />
       </View>
@@ -22,7 +30,9 @@ export default ({navigation}) => {
 const Item = ({title, value, onPress = () => null}) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.item}>
-      <Text size="h2">{title}</Text>
+      <Text style={styles.text} size="h2">
+        {title}
+      </Text>
       <Switch value={value} />
     </TouchableOpacity>
   );
@@ -39,5 +49,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginVertical: 10,
+  },
+  text: {
+    flex: 1,
   },
 });
