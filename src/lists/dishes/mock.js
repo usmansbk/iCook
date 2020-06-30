@@ -3,7 +3,7 @@ export default [
   {
     id: '1234',
     title: 'Coconut rice',
-    likes: 4,
+    reviews: 4,
     comments: 8,
     author: {
       id: 3,
@@ -23,7 +23,7 @@ export default [
   {
     id: '123',
     title: 'Coconut rice',
-    likes: 14,
+    reviews: 14,
     comments: 200,
     isPinned: true,
     author: {
@@ -43,7 +43,7 @@ export default [
   {
     id: '12',
     title: 'Paella Fry rice',
-    likes: 14,
+    reviews: 14,
     comments: 200,
     author: {
       id: 1,

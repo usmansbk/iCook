@@ -5,7 +5,7 @@ import Step from './Step';
 import Health from './Health';
 import SectionHeader from './SectionHeader';
 import Item from '../dishes/Item';
-import Comments from './Comments';
+import Comments from './Reviews';
 
 export default class Recipe extends React.Component {
   _onPressAvatar = (id) => this.props.navigation.navigate('profile', {id});
@@ -78,7 +78,7 @@ export default class Recipe extends React.Component {
       description,
       category,
       author,
-      likes,
+      reviews,
       commentsCount,
       images,
       createdAt,
@@ -93,7 +93,7 @@ export default class Recipe extends React.Component {
         category={category}
         authorAvatar={author.avatar}
         authorName={author.name}
-        likes={likes}
+        reviews={reviews}
         commentsCount={commentsCount}
         images={images}
         date={createdAt}

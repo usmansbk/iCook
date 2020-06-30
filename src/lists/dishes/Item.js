@@ -20,9 +20,9 @@ export default class Item extends React.Component {
       authorAvatar,
       images = [],
       title,
-      likes,
+      reviews,
       isLiked,
-      isPinned,
+      rating,
       date,
       category,
       description,
@@ -50,25 +50,26 @@ export default class Item extends React.Component {
         <TouchableNativeFeedback disabled={disabled} onPress={this._onPress}>
           <View style={styles.footer}>
             <View style={styles.buttons}>
+              <View />
               <View style={styles.row}>
                 <IconButton
                   color={isLiked ? colors.veryWeakRed : undefined}
                   name={`heart${isLiked ? '' : 'o'}`}
                 />
-                <IconButton name="message1" onPress={this._onPressComment} />
-              </View>
-              <View style={styles.row}>
                 <IconButton
-                  name={`pushpin${isPinned ? '' : 'o'}`}
+                  name="shoppingcart"
+                  onPress={this._onPressComment}
                   color={colors.primary}
                 />
-                <IconButton name="sharealt" color={colors.primary} />
               </View>
             </View>
             <View style={styles.footerBody}>
-              <Text style={styles.boldText}>
-                {numeral(likes).format(likes > 1000 ? '0.0a' : '0a')} likes
-              </Text>
+              {Boolean(rating && reviews) && (
+                <Text style={styles.boldText}>
+                  {numeral(reviews).format(reviews > 1000 ? '0.0a' : '0a')}{' '}
+                  reviews
+                </Text>
+              )}
               <Text style={styles.title}>{title}</Text>
               {Boolean(category) && <Text>{category}</Text>}
               <Text

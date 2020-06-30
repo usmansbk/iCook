@@ -12,7 +12,7 @@ export default ({navigation}) => {
     <View style={styles.container}>
       <Header
         goBack={_goBack}
-        title="Recipe"
+        title="Dish"
         rightIcon={me ? 'ellipsis1' : undefined}
         rightAction={_rightAction}
       />

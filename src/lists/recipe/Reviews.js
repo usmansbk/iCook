@@ -12,7 +12,7 @@ export default class Comments extends React.Component {
     return (
       <View style={styles.container}>
         <Text onPress={this._toComments} style={styles.heading}>
-          COMMENTS {total ? `(${total})` : ''}
+          REVIEWS {total ? `(${total})` : ''}
         </Text>
         {items.map((item) => (
           <CommentItem

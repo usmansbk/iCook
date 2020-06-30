@@ -26,7 +26,7 @@ export default function Dishes(props) {
       title,
       description,
       author,
-      likes,
+      reviews,
       commentsCount,
       images,
       createdAt,
@@ -40,7 +40,7 @@ export default function Dishes(props) {
         description={description}
         authorAvatar={author.avatar}
         authorName={author.name}
-        likes={likes}
+        reviews={reviews}
         commentsCount={commentsCount}
         images={images}
         date={createdAt}
