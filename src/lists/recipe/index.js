@@ -51,7 +51,11 @@ export default class Recipe extends React.Component {
       },
     };
 
-    sections.push(ingredients, steps, health);
+    if (steps.data.length) {
+      sections.push(steps);
+    }
+
+    sections.push(ingredients, health);
 
     return sections;
   };
@@ -77,7 +81,7 @@ export default class Recipe extends React.Component {
       author,
       likes,
       commentsCount,
-      image,
+      images,
       createdAt,
       isLiked,
     } = data;
@@ -92,7 +96,7 @@ export default class Recipe extends React.Component {
         authorName={author.name}
         likes={likes}
         commentsCount={commentsCount}
-        image={image}
+        images={images}
         date={createdAt}
         isLiked={isLiked}
         onPressItem={this._onPressItem}

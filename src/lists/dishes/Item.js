@@ -17,7 +17,7 @@ export default class Item extends React.Component {
       disabled,
       authorName,
       authorAvatar,
-      image,
+      images = [],
       title,
       likes,
       isLiked,
@@ -46,7 +46,7 @@ export default class Item extends React.Component {
               {formatDistance(new Date(date), {addSuffix: true})}
             </Text>
           </View>
-          <Image source={{uri: image}} style={styles.image} />
+          <Image source={{uri: images[0]}} style={styles.image} />
           <View style={styles.footer}>
             <View style={styles.buttons}>
               <View style={styles.row}>

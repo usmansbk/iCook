@@ -28,7 +28,7 @@ export default function Dishes(props) {
       author,
       likes,
       commentsCount,
-      image,
+      images,
       createdAt,
       isLiked,
       isPinned,
@@ -42,7 +42,7 @@ export default function Dishes(props) {
         authorName={author.name}
         likes={likes}
         commentsCount={commentsCount}
-        image={image}
+        images={images}
         date={createdAt}
         isLiked={isLiked}
         isPinned={isPinned}

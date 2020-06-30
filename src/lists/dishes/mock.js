@@ -13,8 +13,11 @@ export default [
     description:
       'Dont just stick to white and jollof rice! Try out this coconut rice recipe',
     isLiked: true,
-    image:
+    images: [
       'https://cdn.pixabay.com/photo/2016/02/19/11/30/shrimp-1209744__480.jpg',
+      'https://cdn.pixabay.com/photo/2016/02/19/11/30/shrimp-1209744__480.jpg',
+      'https://cdn.pixabay.com/photo/2016/02/19/11/30/shrimp-1209744__480.jpg',
+    ],
     createdAt: new Date().toISOString(),
   },
   {
@@ -30,8 +33,11 @@ export default [
     },
     description:
       'Dont just stick to white and jollof rice! Try out this coconut rice recipe',
-    image:
+    images: [
       'https://cdn.pixabay.com/photo/2017/04/05/22/43/rice-2206668__480.jpg',
+      'https://cdn.pixabay.com/photo/2017/04/05/22/43/rice-2206668__480.jpg',
+      'https://cdn.pixabay.com/photo/2017/04/05/22/43/rice-2206668__480.jpg',
+    ],
     createdAt: new Date().toISOString(),
   },
   {
@@ -46,8 +52,10 @@ export default [
     },
     description:
       'Dont just stick to white and jollof rice! Try out this coconut rice recipe',
-    image:
+    images: [
       'https://cdn.pixabay.com/photo/2017/06/21/22/44/paella-2428945__480.jpg',
+      'https://cdn.pixabay.com/photo/2017/06/21/22/44/paella-2428945__480.jpg',
+    ],
     createdAt: new Date().toISOString(),
   },
 ];
