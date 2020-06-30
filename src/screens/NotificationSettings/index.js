@@ -18,7 +18,6 @@ export default ({navigation}) => {
       <Header goBack={_goBack} title="Notifications" />
       <View style={styles.container}>
         <Item title="Liked my recipes" value={like} />
-        <Item title="Pinned my recipes" value={pin} />
         <Item title="Comment on my recipes" value={comment} />
         <Item title="Newsletter" value={newsletter} />
         <Item title="Auto update App" value={autoUpdate} />
