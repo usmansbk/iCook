@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TouchableWithoutFeedback} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Icon from './Icon';
 import colors from '../config/colors';
 
