@@ -7,10 +7,12 @@ import items from './items';
 import colors from '../../config/colors';
 
 export default class Account extends React.Component {
+  _toProfile = () =>
+    this.props.navigation.navigate('profile', {id: this.props.id});
   _renderHeader = () => {
     const name = 'Usman Suleiman Babakolo';
     return (
-      <TouchableOpacity style={styles.header}>
+      <TouchableOpacity onPress={this._toProfile} style={styles.header}>
         <Avatar name={name} />
         <Text style={styles.name} size="h1">
           {name}
