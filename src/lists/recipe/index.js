@@ -91,6 +91,7 @@ export default class Recipe extends React.Component {
         date={createdAt}
         isLiked={isLiked}
         onPressItem={this._onPressItem}
+        big
       />
     );
   };

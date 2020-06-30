@@ -20,6 +20,7 @@ export default class Item extends React.Component {
       isLiked,
       date,
       description,
+      big,
     } = this.props;
     return (
       <TouchableOpacity
@@ -52,7 +53,7 @@ export default class Item extends React.Component {
           <View style={styles.footerBody}>
             <Text style={styles.boldText}>{likes} likes</Text>
             <Text style={styles.title}>{title}</Text>
-            <Text numberOfLines={2}>{description}</Text>
+            <Text numberOfLines={big ? undefined : 2}>{description}</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -61,9 +62,7 @@ export default class Item extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: 500,
-  },
+  container: {},
   image: {
     height: 248,
   },
