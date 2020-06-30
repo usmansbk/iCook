@@ -2,15 +2,18 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Text from '../../common/Text';
 import TextInput from '../../common/TextInput';
-import CommentItem from './CommentItem';
+import CommentItem from '../comments/Item';
 import {comments} from '../../screens/DishDetails/mock';
 
 export default class Comments extends React.Component {
+  _toComments = () => this.props.toComments();
   render() {
     const {total, items = []} = this.props;
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>COMMENTS {total ? `(${total})` : ''}</Text>
+        <Text onPress={this._toComments} style={styles.heading}>
+          COMMENTS {total ? `(${total})` : ''}
+        </Text>
         {comments.items.map((item) => (
           <CommentItem
             key={item.id}

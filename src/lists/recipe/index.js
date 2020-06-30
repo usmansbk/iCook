@@ -9,7 +9,8 @@ import Comments from './Comments';
 
 export default class Recipe extends React.Component {
   _onPressAvatar = (id) => this.props.navigation.navigate('profile', {id});
-  _onPressComment = (id) => this.props.navigation.navigate('comments', {id});
+  _onPressComment = () =>
+    this.props.navigation.navigate('comments', {id: this.props.id});
   mapRecipeToSections = (recipe) => {
     const sections = [];
     const ingredients = {
@@ -63,7 +64,7 @@ export default class Recipe extends React.Component {
   };
 
   _renderFooter = () => {
-    return <Comments />;
+    return <Comments toComments={this._onPressComment} />;
   };
 
   _renderHeader = () => {
