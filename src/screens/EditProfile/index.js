@@ -4,6 +4,8 @@ import Header from '../../common/Header';
 import TextInput from '../../common/TextInput';
 import Button from '../../common/Button';
 import Avatar from '../../common/Avatar';
+import Icon from '../../common/Icon';
+import colors from '../../config/colors';
 
 export default ({navigation}) => {
   const goBack = React.useCallback(() => navigation.goBack(), [navigation]);
@@ -17,7 +19,16 @@ export default ({navigation}) => {
       <Header title="Edit profile" goBack={goBack} />
       <View style={styles.container}>
         <View style={styles.avatar}>
-          <Avatar name={name} uri={avatar} size="h1" />
+          <Avatar
+            name={name}
+            uri={avatar}
+            size="h1"
+            picker
+            onPress={() => null}
+          />
+          <View style={styles.picker}>
+            <Icon name="camera" color={colors.inactive} size={24} />
+          </View>
         </View>
         <View style={styles.field}>
           <TextInput label="Name" value={name} />
@@ -41,6 +52,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   avatar: {
+    alignSelf: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
+  },
+  picker: {
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
   },
 });
