@@ -60,8 +60,8 @@ export default ({
           styles.border,
           disabledState,
           errorState,
-          emptyState,
           focusState,
+          emptyState,
         ]}>
         {Boolean(items) && (
           <View style={styles.dropdown}>
