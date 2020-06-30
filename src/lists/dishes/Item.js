@@ -55,11 +55,8 @@ export default class Item extends React.Component {
             <View style={styles.buttons}>
               <PriceTag currency={currency} price={price} />
               <View style={styles.row}>
-                <IconButton
-                  name="shoppingcart"
-                  onPress={this._onPressComment}
-                  color={colors.primary}
-                />
+                <IconButton name="shoppingcart" onPress={() => null} />
+                <IconButton name="message1" onPress={this._onPressComment} />
                 <IconButton
                   color={isLiked ? colors.veryWeakRed : undefined}
                   name={`heart${isLiked ? '' : 'o'}`}
