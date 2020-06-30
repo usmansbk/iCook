@@ -22,7 +22,7 @@ export default ({navigation}) => {
           <Avatar
             name={name}
             uri={avatar}
-            size="h1"
+            size="l1"
             picker
             onPress={() => null}
           />

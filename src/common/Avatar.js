@@ -5,6 +5,7 @@ import {getAvatarBackgroundColor} from '../lib/utils';
 import {avatarColorsWithOpacity} from '../config/colors';
 
 const sizes = {
+  l1: 120,
   h1: 80,
   h2: 64,
   h3: 40,
