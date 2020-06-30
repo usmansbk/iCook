@@ -12,6 +12,12 @@ import {gender, countryCodes} from '../../lib/constants';
 
 export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
+  const _toLogin = React.useCallback(() => navigation.navigate('login'), [
+    navigation,
+  ]);
+  const _onSubmit = React.useCallback(() => {
+    navigation.navigate('home');
+  }, [navigation]);
   const [showPassword, setShowPassword] = React.useState(false);
   const _toggleVisibility = () => setShowPassword(!showPassword);
   return (
@@ -69,10 +75,10 @@ export default ({navigation}) => {
             </Text>
           </View>
           <View style={styles.submit}>
-            <Button text="Sign up" />
+            <Button text="Sign up" onPress={_onSubmit} />
           </View>
           <View style={styles.footer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={_toLogin}>
               <Text style={styles.footerText}>
                 {'Already have an account?'}{' '}
                 <Text style={styles.actionText}>Sign in</Text>

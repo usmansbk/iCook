@@ -35,6 +35,12 @@ export default class Dishes extends React.Component {
   };
 
   render() {
-    return <FlatList data={data} renderItem={this._renderItem} />;
+    return (
+      <FlatList
+        initialNumToRender={1}
+        data={data}
+        renderItem={this._renderItem}
+      />
+    );
   }
 }

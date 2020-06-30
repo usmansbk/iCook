@@ -13,6 +13,13 @@ import colors from '../../config/colors';
 
 export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
+  const _toSignup = React.useCallback(() => navigation.navigate('signup'), [
+    navigation,
+  ]);
+  const _onSubmit = React.useCallback(() => {
+    navigation.navigate('home');
+  }, [navigation]);
+
   return (
     <>
       <Header goBack={_goBack} title="Login" />
@@ -38,13 +45,13 @@ export default ({navigation}) => {
               </TouchableOpacity>
             </View>
             <View style={styles.button}>
-              <Button style={button} text="Log in" />
+              <Button onPress={_onSubmit} style={button} text="Log in" />
             </View>
             <Or />
             <View style={styles.footer}>
               <GoogleButton />
               <FacebookButton />
-              <TouchableOpacity style={styles.nav}>
+              <TouchableOpacity style={styles.nav} onPress={_toSignup}>
                 <Text style={styles.footerText}>
                   {"Don't have an account?"}{' '}
                   <Text style={styles.actionText}>Sign Up</Text>

@@ -100,6 +100,7 @@ export default class Recipe extends React.Component {
     const {data} = this.props;
     return (
       <SectionList
+        initialNumToRender={1}
         ListHeaderComponent={this._renderHeader}
         renderSectionHeader={this._renderSectionHeader}
         sections={this.mapRecipeToSections(data)}
