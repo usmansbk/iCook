@@ -26,10 +26,11 @@ export default class Account extends React.Component {
   };
 
   _renderItem = ({item}) => {
-    const {title, icon, id} = item;
+    const {title, icon, id, route} = item;
     const color = id === 'logout' ? colors.veryWeakRed : colors.text;
+    const onPress = () => this.props.navigation.navigate(route);
     return (
-      <TouchableOpacity style={styles.itemContainer}>
+      <TouchableOpacity style={styles.itemContainer} onPress={onPress}>
         <View style={styles.label}>
           <Icon size={24} name={icon} color={color} />
           <Text style={[styles.text, {color}]} size="h2">

@@ -31,7 +31,7 @@ const TextAvatar = ({name = '', size, style, color}) => {
   );
 };
 
-export default ({name, size = 'h2', uri, onPress, disabled}) => {
+export default ({name = '', size = 'h2', uri, onPress, disabled}) => {
   const diameter = sizes[size];
   const radius = diameter / 2;
   const color = getAvatarBackgroundColor(name);

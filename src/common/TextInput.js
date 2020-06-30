@@ -19,6 +19,7 @@ export default ({
   error = false,
   icon,
   iconSize = 20,
+  multiline = false,
   dropdownPlaceholder,
   onBlur = () => null,
   onFocus = () => null,
@@ -36,14 +37,12 @@ export default ({
     onBlur();
   };
 
-  const focusState = focused ? styles.active : {};
+  const focusState = focused ? styles.active : styles.default;
 
   const emptyState = value ? {} : styles.empty;
   const disabledState = disabled ? styles.disabled : {};
   const errorState = error ? styles.error : {};
-  const inputState = disabled
-    ? styles.textInputInactive
-    : styles.textInputActive;
+  const inputState = disabled ? styles.textInputInactive : {};
   const textError = error ? styles.textError : {};
 
   return (
@@ -80,6 +79,7 @@ export default ({
           placeholder={placeholder}
           style={[styles.textInput, inputState, textError]}
           underlineColorAndroid="transparent"
+          multiline={multiline}
           autoCorrect={false}
           onFocus={_setFocus}
           onChangeText={onChangeText}
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   textInput: {
-    height: 40,
+    minHeight: 40,
     flex: 1,
     fontFamily: 'Poppins-Regular',
     fontSize: 14,
@@ -155,5 +155,8 @@ const styles = StyleSheet.create({
   },
   helperText: {
     color: withOpacity.primary(0.6),
+  },
+  default: {
+    borderColor: colors.inactive,
   },
 });

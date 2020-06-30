@@ -13,6 +13,7 @@ import Favorites from './screens/Favorites';
 import DishDetails from './screens/DishDetails';
 import Profile from './screens/Profile';
 import Account from './screens/Account';
+import EditProfile from './screens/EditProfile';
 import Icon from './common/Icon';
 
 const Stack = createStackNavigator();
@@ -33,7 +34,7 @@ const HomeTab = () => {
           } else if (route.name === 'Likes') {
             iconName = 'heart' + (focused ? '' : 'o');
           } else if (route.name === 'Account') {
-            iconName = 'setting';
+            iconName = 'user';
           }
           return <Icon name={iconName} color={color} size={size} />;
         },
@@ -62,6 +63,7 @@ export default function App() {
           <Stack.Screen name="forgotPassword" component={ForgotPassword} />
           <Stack.Screen name="details" component={DishDetails} />
           <Stack.Screen name="profile" component={Profile} />
+          <Stack.Screen name="editprofile" component={EditProfile} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

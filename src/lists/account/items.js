@@ -3,11 +3,12 @@ export default [
     id: 'profile',
     title: 'Edit profile',
     icon: 'edit',
+    route: 'editprofile',
   },
   {
     id: 'account',
     title: 'Account settings',
-    icon: 'user',
+    icon: 'setting',
   },
   {
     id: 'notifications',
