@@ -1,12 +1,22 @@
 import React from 'react';
 import {FlatList} from 'react-native';
+import {useScrollToTop} from '@react-navigation/native';
 import Item from './Item';
 import data from './mock';
 
-export default class Dishes extends React.Component {
-  _onPressItem = (id) => this.props.navigation.navigate('details', {id});
-  _onPressAvatar = (id) => this.props.navigation.navigate('profile', {id});
-  _renderItem = ({item}) => {
+export default function Dishes(props) {
+  const ref = React.useRef(null);
+  useScrollToTop(ref);
+
+  const _onPressItem = React.useCallback(
+    (id) => props.navigation.navigate('details', {id}),
+    [props.navigation],
+  );
+  const _onPressAvatar = React.useCallback(
+    (id) => props.navigation.navigate('profile', {id}),
+    [props.navigation],
+  );
+  const _renderItem = ({item}) => {
     const {
       id,
       title,
@@ -30,19 +40,17 @@ export default class Dishes extends React.Component {
         image={image}
         date={createdAt}
         isLiked={isLiked}
-        onPressItem={this._onPressItem}
-        onPressAvatar={this._onPressAvatar}
+        onPressItem={_onPressItem}
+        onPressAvatar={_onPressAvatar}
       />
     );
   };
-
-  render() {
-    return (
-      <FlatList
-        initialNumToRender={1}
-        data={data}
-        renderItem={this._renderItem}
-      />
-    );
-  }
+  return (
+    <FlatList
+      ref={ref}
+      initialNumToRender={1}
+      data={data}
+      renderItem={_renderItem}
+    />
+  );
 }
