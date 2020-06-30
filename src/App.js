@@ -8,12 +8,13 @@ import SignUp from './screens/SignUp';
 import Home from './screens/Home';
 import Favorites from './screens/Favorites';
 import DishDetails from './screens/DishDetails';
+import Profile from './screens/Profile';
 
 export default () => {
   return (
     <>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <DishDetails />
+      <SignUp />
     </>
   );
 };

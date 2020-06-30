@@ -29,7 +29,6 @@ export default ({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    width: 335,
     borderRadius: 5,
     marginVertical: 8,
   },
