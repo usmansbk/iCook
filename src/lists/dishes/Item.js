@@ -7,6 +7,7 @@ import IconButton from '../../common/IconButton';
 import colors from '../../config/colors';
 import formatDistance from 'date-fns/formatDistanceToNow';
 import Carousel from '../../common/Carousel';
+import PriceTag from '../../common/PriceTag';
 
 export default class Item extends React.Component {
   _onPress = () => this.props.onPressItem(this.props.id);
@@ -27,6 +28,8 @@ export default class Item extends React.Component {
       category,
       description,
       big,
+      currency = 'NGN',
+      price = 1000,
     } = this.props;
     return (
       <View style={styles.container}>
@@ -50,7 +53,7 @@ export default class Item extends React.Component {
         <TouchableNativeFeedback disabled={disabled} onPress={this._onPress}>
           <View style={styles.footer}>
             <View style={styles.buttons}>
-              <View />
+              <PriceTag currency={currency} price={price} />
               <View style={styles.row}>
                 <IconButton
                   name="shoppingcart"
@@ -105,6 +108,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   buttons: {
+    paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

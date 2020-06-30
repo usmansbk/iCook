@@ -19,3 +19,7 @@ export const countryCodes = [
     value: 234,
   },
 ];
+
+export const currencySymbols = {
+  NGN: '₦',
+};
