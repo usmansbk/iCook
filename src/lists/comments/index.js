@@ -30,6 +30,7 @@ export default ({navigation, data}) => {
 
   return (
     <FlatList
+      initialNumToRender={1}
       style={styles.container}
       data={data.items}
       renderItem={_renderItem}
