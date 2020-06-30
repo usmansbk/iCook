@@ -8,7 +8,7 @@ export const gender = [
     value: 'female',
   },
   {
-    label: 'Prefer not to say',
+    label: 'Non-Binary',
     value: 'others',
   },
 ];
