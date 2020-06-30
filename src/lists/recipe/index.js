@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionList, StyleSheet, View} from 'react-native';
+import {SectionList} from 'react-native';
 import Ingredient from './Ingredient';
 import Step from './Step';
 import Health from './Health';
@@ -8,6 +8,7 @@ import Item from '../dishes/Item';
 import Comments from './Comments';
 
 export default class Recipe extends React.Component {
+  _onPressAvatar = (id) => this.props.navigation.navigate('profile', {id});
   mapRecipeToSections = (recipe) => {
     const sections = [];
     const ingredients = {
@@ -91,6 +92,7 @@ export default class Recipe extends React.Component {
         date={createdAt}
         isLiked={isLiked}
         onPressItem={this._onPressItem}
+        onPressAvatar={this._onPressAvatar}
         big
       />
     );
@@ -109,9 +111,3 @@ export default class Recipe extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  footer: {
-    height: 100,
-  },
-});

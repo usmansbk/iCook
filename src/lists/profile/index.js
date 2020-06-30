@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 import Header from './Header';
 import Item from '../dishes/Item';
 import mock from '../dishes/mock';
@@ -51,5 +51,3 @@ export default class Profile extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({});
