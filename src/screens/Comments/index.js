@@ -8,7 +8,7 @@ export default ({navigation}) => {
   return (
     <>
       <Header goBack={_goBack} title="Comments" />
-      <Comments data={data} />
+      <Comments data={data} navigation={navigation} />
     </>
   );
 };

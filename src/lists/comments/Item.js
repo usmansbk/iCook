@@ -4,10 +4,10 @@ import {View, StyleSheet} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 
-export default ({name, avatar, message, date}) => {
+export default ({name, avatar, message, date, onPressAvatar}) => {
   return (
     <View style={styles.container}>
-      <Avatar size="h4" name={name} uri={avatar} />
+      <Avatar size="h4" name={name} uri={avatar} onPress={onPressAvatar} />
       <View style={styles.body}>
         <Text numberOfLines={1} style={styles.name}>
           {name}
