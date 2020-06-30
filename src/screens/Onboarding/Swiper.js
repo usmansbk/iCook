@@ -53,7 +53,11 @@ const pages = [
 
 export default () => {
   return (
-    <Swiper loop={false} style={styles.swiper} activeDotColor={colors.primary}>
+    <Swiper
+      autoplay
+      loop={false}
+      style={styles.swiper}
+      activeDotColor={colors.primary}>
       {pages.map((page) => (
         <View style={styles.page} key={page.key}>
           <Image
