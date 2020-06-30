@@ -11,6 +11,9 @@ export default ({navigation}) => {
   const _toLogin = React.useCallback(() => navigation.navigate('login'), [
     navigation,
   ]);
+  const _toHome = React.useCallback(() => navigation.navigate('home'), [
+    navigation,
+  ]);
 
   return (
     <View style={styles.container}>
@@ -18,6 +21,7 @@ export default ({navigation}) => {
       <View style={styles.buttons}>
         <Button onPress={_toSignup} text="Create an account" />
         <Button onPress={_toLogin} style={login} text="Login" />
+        <Button onPress={_toHome} style={login} text="Guest" />
       </View>
     </View>
   );

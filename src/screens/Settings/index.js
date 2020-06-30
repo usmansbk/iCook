@@ -31,11 +31,10 @@ export default ({navigation}) => {
     email = 'usmansbk@gmail.com',
     gender = 'Male',
     country = 'Nigeria',
-    theme = 'Light',
   } = {};
   return (
     <>
-      <Header goBack={_goBack} title="Settings" />
+      <Header goBack={_goBack} title="Account settings" />
       <View style={styles.container}>
         <Item title="Email" subtitle={email} onPress={_toChangeEmail} />
         <Item
@@ -50,7 +49,6 @@ export default ({navigation}) => {
           onPress={_toChangeRegion}
         />
         <Item title="Socials login options" onPress={_toLoginOptions} />
-        <Item title="App theme" subtitle={theme} />
         <Item
           color={colors.veryWeakRed}
           title="Close account"

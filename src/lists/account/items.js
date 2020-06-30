@@ -8,7 +8,7 @@ export default [
   {
     id: 'account',
     title: 'Account settings',
-    icon: 'setting',
+    icon: 'user',
     route: 'settings',
   },
   {
