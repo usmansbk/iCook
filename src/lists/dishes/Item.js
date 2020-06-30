@@ -57,7 +57,7 @@ export default class Item extends React.Component {
             </View>
             <View style={styles.footerBody}>
               <Text style={styles.boldText}>
-                {numeral(likes).format('0.0a')} likes
+                {numeral(likes).format(likes > 1000 ? '0.0a' : '0a')} likes
               </Text>
               <Text style={styles.title}>{title}</Text>
               <Text numberOfLines={big ? undefined : 2}>{description}</Text>
