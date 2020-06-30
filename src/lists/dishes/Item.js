@@ -7,7 +7,6 @@ import colors from '../../config/colors';
 import formatDistance from 'date-fns/formatDistanceToNow';
 import Carousel from '../../common/Carousel';
 import PriceTag from '../../common/PriceTag';
-import Rating from '../../common/Rating';
 
 export default class Item extends React.Component {
   _onPress = () => this.props.onPressItem(this.props.id);
@@ -21,9 +20,7 @@ export default class Item extends React.Component {
       authorAvatar,
       images = [],
       title,
-      reviews,
       isLiked,
-      rating,
       date,
       category,
       description,
@@ -64,7 +61,6 @@ export default class Item extends React.Component {
               </View>
             </View>
             <View style={styles.footerBody}>
-              {Boolean(rating) && <Rating rating={rating} reviews={reviews} />}
               <Text style={styles.title}>{title}</Text>
               {Boolean(category) && <Text>{category}</Text>}
               <Text

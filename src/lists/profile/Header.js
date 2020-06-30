@@ -4,6 +4,7 @@ import numeral from 'numeral';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import Button from '../../common/Button';
+import Rating from '../../common/Rating';
 import colors from '../../config/colors';
 
 const format = (val) => numeral(val).format(val > 1000 ? '0.0a' : '0a');
@@ -30,6 +31,7 @@ export default ({
   recipeCount = 13,
   me = true,
   isFollowing,
+  rating = 4,
   bio = 'I love to cook, its just a part of me',
 }) => {
   return (
@@ -44,7 +46,7 @@ export default ({
             </View>
             {!me && (
               <View>
-                <Button text="Follow" />
+                <Button text={isFollowing ? 'Unfollow' : 'Follow'} />
               </View>
             )}
           </View>
@@ -52,6 +54,7 @@ export default ({
         <Text size="h2" style={styles.name}>
           {name}
         </Text>
+        {Boolean(rating) && <Rating rating={rating} />}
         <Text size="h3" style={styles.label}>
           Bio:
         </Text>
