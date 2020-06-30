@@ -53,13 +53,13 @@ export default class Item extends React.Component {
               <View />
               <View style={styles.row}>
                 <IconButton
-                  color={isLiked ? colors.veryWeakRed : undefined}
-                  name={`heart${isLiked ? '' : 'o'}`}
-                />
-                <IconButton
                   name="shoppingcart"
                   onPress={this._onPressComment}
                   color={colors.primary}
+                />
+                <IconButton
+                  color={isLiked ? colors.veryWeakRed : undefined}
+                  name={`heart${isLiked ? '' : 'o'}`}
                 />
               </View>
             </View>

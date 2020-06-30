@@ -4,14 +4,9 @@ import Header from '../../common/Header';
 import Dishes from '../../lists/dishes';
 
 export default ({navigation}) => {
-  const _rightAction = () => null;
   return (
     <View style={styles.container}>
-      <Header
-        title="Saved Recipes"
-        rightIcon="plus"
-        rightAction={_rightAction}
-      />
+      <Header title="Saved" />
       <Dishes navigation={navigation} />
     </View>
   );
