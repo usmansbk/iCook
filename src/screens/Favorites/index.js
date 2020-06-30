@@ -3,11 +3,11 @@ import {View, StyleSheet} from 'react-native';
 import Header from '../../common/Header';
 import Dishes from '../../lists/dishes';
 
-export default () => {
+export default ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header title="My Likes" />
-      <Dishes />
+      <Dishes navigation={navigation} />
     </View>
   );
 };

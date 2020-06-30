@@ -13,19 +13,37 @@ import Favorites from './screens/Favorites';
 import DishDetails from './screens/DishDetails';
 import Profile from './screens/Profile';
 import Account from './screens/Account';
+import Icon from './common/Icon';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const HomeTab = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        showLabel: false,
+      }}
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, color, size}) => {
+          let iconName;
+
+          if (route.name === 'Home') {
+            iconName = 'home';
+          } else if (route.name === 'Likes') {
+            iconName = 'heart' + (focused ? '' : 'o');
+          } else if (route.name === 'Account') {
+            iconName = 'user';
+          }
+          return <Icon name={iconName} color={color} size={size} />;
+        },
+      })}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Likes" component={Favorites} />
       <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
   );
-}
+};
 
 export default function App() {
   return (
