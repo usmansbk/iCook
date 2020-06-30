@@ -24,10 +24,12 @@ export default ({
   onBlur = () => null,
   onFocus = () => null,
   onChangeText = () => null,
-  onPressIcon = () => null,
+  onPressIcon,
   ...rest
 }) => {
   const [focused, setFocus] = React.useState(false);
+  const [hide, setHide] = React.useState(secure);
+  const _toggleVisibility = () => setHide(!hide);
   const _setFocus = () => {
     setFocus(true);
     onFocus();
@@ -83,13 +85,13 @@ export default ({
           autoCorrect={false}
           onFocus={_setFocus}
           onChangeText={onChangeText}
-          secureTextEntry={secure}
+          secureTextEntry={hide}
           onBlur={_setBlur}
           {...rest}
         />
         {Boolean(icon) && (
           <Icon
-            onPress={onPressIcon}
+            onPress={onPressIcon || _toggleVisibility}
             size={iconSize}
             color={focused ? colors.primary : undefined}
             name={icon}

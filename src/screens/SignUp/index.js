@@ -18,8 +18,6 @@ export default ({navigation}) => {
   const _onSubmit = React.useCallback(() => {
     navigation.navigate('home');
   }, [navigation]);
-  const [showPassword, setShowPassword] = React.useState(false);
-  const _toggleVisibility = () => setShowPassword(!showPassword);
   return (
     <>
       <Header goBack={_goBack} title="Create an account" />
@@ -58,12 +56,11 @@ export default ({navigation}) => {
           </View>
           <View style={styles.field}>
             <TextInput
-              secure={showPassword}
+              secure
               required
               label="Password"
               placeholder="Enter your password"
               icon="eye"
-              onPressIcon={_toggleVisibility}
             />
           </View>
           <PasswordStrength />

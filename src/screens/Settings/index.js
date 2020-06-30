@@ -7,6 +7,10 @@ import colors from '../../config/colors';
 
 export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
+  const _toChangePassword = React.useCallback(
+    () => navigation.navigate('changepassword'),
+    [navigation],
+  );
   const {
     email = 'usmansbk@gmail.com',
     gender = 'Male',
@@ -18,7 +22,11 @@ export default ({navigation}) => {
       <Header goBack={_goBack} title="Settings" />
       <View style={styles.container}>
         <Item title="Email" subtitle={email} />
-        <Item title="Password" subtitle="Change password" />
+        <Item
+          title="Password"
+          subtitle="Change password"
+          onPress={_toChangePassword}
+        />
         <Item title="Gender" subtitle={gender} />
         <Item title="Country/region" subtitle={country} />
         <Item title="Socials login options" />
