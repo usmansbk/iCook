@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import Header from '../../common/Header';
 import Text from '../../common/Text';
 import TextInput from '../../common/TextInput';
@@ -16,7 +16,7 @@ export default () => {
   return (
     <>
       <Header goBack={() => null} title="Create an account" />
-      <View style={styles.container}>
+      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View>
           <View style={styles.field}>
             <TextInput required label="Name" placeholder="Enter your name" />
@@ -77,13 +77,16 @@ export default () => {
             </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'white',
+  },
+  contentContainer: {
     paddingHorizontal: 20,
     backgroundColor: 'white',
   },

@@ -4,13 +4,20 @@ import Button from '../../common/Button';
 import colors from '../../config/colors';
 import Swiper from './Swiper';
 
-export default () => {
+export default ({navigation}) => {
+  const _toSignup = React.useCallback(() => navigation.navigate('signup'), [
+    navigation,
+  ]);
+  const _toLogin = React.useCallback(() => navigation.navigate('login'), [
+    navigation,
+  ]);
+
   return (
     <View style={styles.container}>
       <Swiper />
       <View style={styles.buttons}>
-        <Button text="Create an account" />
-        <Button style={login} text="Login" />
+        <Button onPress={_toSignup} text="Create an account" />
+        <Button onPress={_toLogin} style={login} text="Login" />
       </View>
     </View>
   );

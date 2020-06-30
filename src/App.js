@@ -20,9 +20,10 @@ export default function App() {
     <>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{
-          headerShown: false
-        }}>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}>
           <Stack.Screen name="welcome" component={Welcome} />
           <Stack.Screen name="onboarding" component={Onboarding} />
           <Stack.Screen name="login" component={Login} />
