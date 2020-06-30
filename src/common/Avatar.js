@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
+import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import Text from './Text';
 import {getAvatarBackgroundColor} from '../lib/utils';
 import {avatarColorsWithOpacity} from '../config/colors';
@@ -31,7 +31,7 @@ const TextAvatar = ({name = '', size, style, color}) => {
   );
 };
 
-export default ({name, size = 'h2', uri}) => {
+export default ({name, size = 'h2', uri, onPress, disabled}) => {
   const diameter = sizes[size];
   const radius = diameter / 2;
   const color = getAvatarBackgroundColor(name);
@@ -43,10 +43,20 @@ export default ({name, size = 'h2', uri}) => {
     backgroundColor,
   };
 
+  let Avatar = null;
+
   if (!uri) {
-    return <TextAvatar name={name} size={radius} style={style} color={color} />;
+    Avatar = (
+      <TextAvatar name={name} size={radius} style={style} color={color} />
+    );
+  } else {
+    Avatar = <ImageAvatar source={{uri}} size style={style} />;
   }
-  return <ImageAvatar source={{uri}} size style={style} />;
+  return (
+    <TouchableOpacity onPress={onPress} disabled={disabled}>
+      {Avatar}
+    </TouchableOpacity>
+  );
 };
 
 const textStyles = StyleSheet.create({

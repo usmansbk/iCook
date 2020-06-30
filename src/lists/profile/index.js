@@ -10,6 +10,7 @@ export default class Profile extends React.Component {
   };
 
   _onPressItem = (id) => this.props.navigation.navigate('details', {id});
+  _onPressAvatar = (id) => null;
   _renderItem = ({item}) => {
     const {
       id,
@@ -35,6 +36,7 @@ export default class Profile extends React.Component {
         date={createdAt}
         isLiked={isLiked}
         onPressItem={this._onPressItem}
+        onPressAvatar={this._onPressAvatar}
       />
     );
   };

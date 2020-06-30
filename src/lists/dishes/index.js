@@ -5,6 +5,7 @@ import data from './mock';
 
 export default class Dishes extends React.Component {
   _onPressItem = (id) => this.props.navigation.navigate('details', {id});
+  _onPressAvatar = (id) => this.props.navigation.navigate('profile', {id});
   _renderItem = ({item}) => {
     const {
       id,
@@ -30,6 +31,7 @@ export default class Dishes extends React.Component {
         date={createdAt}
         isLiked={isLiked}
         onPressItem={this._onPressItem}
+        onPressAvatar={this._onPressAvatar}
       />
     );
   };

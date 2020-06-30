@@ -16,6 +16,7 @@ import formatDistance from 'date-fns/formatDistanceToNow';
 
 export default class Item extends React.Component {
   _onPress = () => this.props.onPressItem(this.props.id);
+  _onPressAvatar = () => this.props.onPressAvatar(this.props.id);
 
   render() {
     const {
@@ -35,7 +36,12 @@ export default class Item extends React.Component {
         <View style={styles.container}>
           <View style={styles.header}>
             <View style={styles.avatar}>
-              <Avatar uri={authorAvatar} name={authorAvatar} size="h3" />
+              <Avatar
+                onPress={this._onPressAvatar}
+                uri={authorAvatar}
+                name={authorAvatar}
+                size="h3"
+              />
             </View>
             <Text numberOfLines={1} style={styles.name}>
               {authorName}
@@ -73,6 +79,7 @@ export default class Item extends React.Component {
 const styles = StyleSheet.create({
   container: {
     paddingBottom: 40,
+    paddingTop: 10,
   },
   image: {
     height: 248,
