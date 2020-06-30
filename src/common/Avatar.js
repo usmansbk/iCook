@@ -53,7 +53,7 @@ export default ({name, size = 'h2', uri, onPress, disabled}) => {
     Avatar = <ImageAvatar source={{uri}} size style={style} />;
   }
   return (
-    <TouchableOpacity onPress={onPress} disabled={disabled}>
+    <TouchableOpacity onPress={onPress} disabled={disabled || !onPress}>
       {Avatar}
     </TouchableOpacity>
   );

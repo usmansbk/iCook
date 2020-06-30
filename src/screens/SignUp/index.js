@@ -68,7 +68,7 @@ export default ({navigation}) => {
           </View>
           <PasswordStrength />
           <View style={styles.row}>
-            <CheckBox />
+            <CheckBox style={styles.checkbox} />
             <Text style={styles.footerText}>
               {'I agree to the '}
               <Text style={styles.actionText}>terms and conditions</Text>
@@ -119,5 +119,8 @@ const styles = StyleSheet.create({
   },
   submit: {
     marginTop: 28,
+  },
+  checkbox: {
+    marginRight: 10,
   },
 });

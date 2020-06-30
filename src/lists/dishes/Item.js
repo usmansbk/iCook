@@ -1,13 +1,6 @@
 import React from 'react';
 import numeral from 'numeral';
-import {
-  View,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-} from 'react-native';
+import {View, Image, StyleSheet, TouchableNativeFeedback} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import IconButton from '../../common/IconButton';

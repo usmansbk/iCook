@@ -16,6 +16,10 @@ export default ({navigation}) => {
   const _toSignup = React.useCallback(() => navigation.navigate('signup'), [
     navigation,
   ]);
+  const _rememberPassword = React.useCallback(
+    () => navigation.navigate('forgotPassword'),
+    [navigation],
+  );
   const _onSubmit = React.useCallback(() => {
     navigation.navigate('home');
   }, [navigation]);
@@ -40,7 +44,7 @@ export default ({navigation}) => {
                 icon="eye"
                 secure
               />
-              <TouchableOpacity style={styles.nav}>
+              <TouchableOpacity onPress={_rememberPassword} style={styles.nav}>
                 <Text style={styles.actionText}>Forgot password?</Text>
               </TouchableOpacity>
             </View>
