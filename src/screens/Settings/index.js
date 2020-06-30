@@ -19,6 +19,10 @@ export default ({navigation}) => {
     () => navigation.navigate('changegender'),
     [navigation],
   );
+  const _toChangeRegion = React.useCallback(
+    () => navigation.navigate('changeregion'),
+    [navigation],
+  );
   const {
     email = 'usmansbk@gmail.com',
     gender = 'Male',
@@ -36,7 +40,11 @@ export default ({navigation}) => {
           onPress={_toChangePassword}
         />
         <Item title="Gender" subtitle={gender} onPress={_toChangeGender} />
-        <Item title="Country/region" subtitle={country} />
+        <Item
+          title="Country/region"
+          subtitle={country}
+          onPress={_toChangeRegion}
+        />
         <Item title="Socials login options" />
         <Item title="App theme" subtitle={theme} />
         <Item

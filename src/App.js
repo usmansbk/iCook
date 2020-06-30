@@ -19,6 +19,7 @@ import NotificationSettings from './screens/NotificationSettings';
 import ChangePassword from './screens/ChangePassword';
 import ChangeEmail from './screens/Email';
 import Gender from './screens/Gender';
+import Country from './screens/Country';
 
 import Icon from './common/Icon';
 
@@ -74,6 +75,7 @@ export default function App() {
           <Stack.Screen name="changepassword" component={ChangePassword} />
           <Stack.Screen name="changeemail" component={ChangeEmail} />
           <Stack.Screen name="changegender" component={Gender} />
+          <Stack.Screen name="changeregion" component={Country} />
           <Stack.Screen
             name="notificationsettings"
             component={NotificationSettings}
