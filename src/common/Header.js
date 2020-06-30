@@ -20,7 +20,7 @@ export default ({title, goBack, rightAction, rightIcon}) => {
       <Appbar.Content
         style={styles.content}
         title={
-          <Text style={styles.title} size="h2">
+          <Text numberOfLines={1} style={styles.title} size="h2">
             {title}
           </Text>
         }

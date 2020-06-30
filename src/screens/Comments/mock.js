@@ -20,6 +20,7 @@ export default {
       },
       message: 'This really helped me alot, thank you',
       createdAt: new Date().toISOString(),
+      rating: 3,
     },
     {
       id: 3 + '',
