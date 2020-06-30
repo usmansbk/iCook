@@ -23,6 +23,7 @@ export default class Item extends React.Component {
       isLiked,
       isPinned,
       date,
+      category,
       description,
       big,
     } = this.props;
@@ -68,7 +69,12 @@ export default class Item extends React.Component {
                 {numeral(likes).format(likes > 1000 ? '0.0a' : '0a')} likes
               </Text>
               <Text style={styles.title}>{title}</Text>
-              <Text numberOfLines={big ? undefined : 2}>{description}</Text>
+              {Boolean(category) && <Text>{category}</Text>}
+              <Text
+                style={styles.description}
+                numberOfLines={big ? undefined : 2}>
+                {description}
+              </Text>
             </View>
           </View>
         </View>
@@ -117,4 +123,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   date: {},
+  description: {
+    fontFamily: 'Poppins-Italic',
+  },
 });

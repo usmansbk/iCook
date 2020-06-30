@@ -73,6 +73,7 @@ export default class Recipe extends React.Component {
       id,
       title,
       description,
+      category,
       author,
       likes,
       commentsCount,
@@ -86,6 +87,7 @@ export default class Recipe extends React.Component {
         id={id}
         title={title}
         description={description}
+        category={category}
         authorAvatar={author.avatar}
         authorName={author.name}
         likes={likes}
