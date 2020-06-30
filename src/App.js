@@ -14,6 +14,7 @@ import DishDetails from './screens/DishDetails';
 import Profile from './screens/Profile';
 import Account from './screens/Account';
 import EditProfile from './screens/EditProfile';
+import Settings from './screens/Settings';
 import Icon from './common/Icon';
 
 const Stack = createStackNavigator();
@@ -64,6 +65,7 @@ export default function App() {
           <Stack.Screen name="details" component={DishDetails} />
           <Stack.Screen name="profile" component={Profile} />
           <Stack.Screen name="editprofile" component={EditProfile} />
+          <Stack.Screen name="settings" component={Settings} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

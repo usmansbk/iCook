@@ -9,6 +9,7 @@ export default [
     id: 'account',
     title: 'Account settings',
     icon: 'setting',
+    route: 'settings',
   },
   {
     id: 'notifications',
