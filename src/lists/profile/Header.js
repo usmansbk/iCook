@@ -42,9 +42,11 @@ export default ({
               <Stat label="Followers" value={followersCount} />
               <Stat label="Following" value={followingCount} />
             </View>
-            <View>
-              <Button text={me ? 'Edit information' : 'Follow'} />
-            </View>
+            {!me && (
+              <View>
+                <Button text="Follow" />
+              </View>
+            )}
           </View>
         </View>
         <Text size="h2" style={styles.name}>
@@ -69,6 +71,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
+    marginBottom: 8,
   },
   body: {
     flex: 1,
