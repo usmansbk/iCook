@@ -3,6 +3,7 @@ export default {
   id: '12',
   title: 'Paella Fry rice',
   reviews: 14,
+  rating: 4,
   isLiked: true,
   comments: 200,
   author: {

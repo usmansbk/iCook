@@ -4,6 +4,7 @@ export default [
     id: '1234',
     title: 'Coconut rice',
     reviews: 4,
+    rating: 5,
     comments: 8,
     author: {
       id: 3,
@@ -24,6 +25,7 @@ export default [
     id: '123',
     title: 'Coconut rice',
     reviews: 14,
+    rating: 1,
     comments: 200,
     isPinned: true,
     author: {

@@ -1,5 +1,4 @@
 import React from 'react';
-import numeral from 'numeral';
 import {View, StyleSheet, TouchableNativeFeedback} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
@@ -8,6 +7,7 @@ import colors from '../../config/colors';
 import formatDistance from 'date-fns/formatDistanceToNow';
 import Carousel from '../../common/Carousel';
 import PriceTag from '../../common/PriceTag';
+import Rating from '../../common/Rating';
 
 export default class Item extends React.Component {
   _onPress = () => this.props.onPressItem(this.props.id);
@@ -64,12 +64,7 @@ export default class Item extends React.Component {
               </View>
             </View>
             <View style={styles.footerBody}>
-              {Boolean(rating && reviews) && (
-                <Text style={styles.boldText}>
-                  {numeral(reviews).format(reviews > 1000 ? '0.0a' : '0a')}{' '}
-                  reviews
-                </Text>
-              )}
+              {Boolean(rating) && <Rating rating={rating} reviews={reviews} />}
               <Text style={styles.title}>{title}</Text>
               {Boolean(category) && <Text>{category}</Text>}
               <Text
@@ -103,11 +98,14 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttons: {
     paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   boldText: {
     fontFamily: 'Poppins-Bold',
