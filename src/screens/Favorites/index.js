@@ -6,7 +6,7 @@ import Dishes from '../../lists/dishes';
 export default ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Header title="My Likes" />
+      <Header title="Saved Recipes" />
       <Dishes navigation={navigation} />
     </View>
   );

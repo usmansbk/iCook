@@ -27,6 +27,7 @@ export default function Dishes(props) {
       image,
       createdAt,
       isLiked,
+      isPinned,
     } = item;
     return (
       <Item
@@ -40,6 +41,7 @@ export default function Dishes(props) {
         image={image}
         date={createdAt}
         isLiked={isLiked}
+        isPinned={isPinned}
         onPressItem={_onPressItem}
         onPressAvatar={_onPressAvatar}
       />

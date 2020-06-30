@@ -20,6 +20,7 @@ export default class Item extends React.Component {
       title,
       likes,
       isLiked,
+      isPinned,
       date,
       description,
       big,
@@ -53,7 +54,13 @@ export default class Item extends React.Component {
                 />
                 <IconButton name="message1" />
               </View>
-              <IconButton name="sharealt" color={colors.primary} />
+              <View style={styles.row}>
+                <IconButton
+                  name={`pushpin${isPinned ? '' : 'o'}`}
+                  color={colors.primary}
+                />
+                <IconButton name="sharealt" color={colors.primary} />
+              </View>
             </View>
             <View style={styles.footerBody}>
               <Text style={styles.boldText}>

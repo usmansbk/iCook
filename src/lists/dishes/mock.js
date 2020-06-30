@@ -22,6 +22,7 @@ export default [
     title: 'Coconut rice',
     likes: 14,
     comments: 200,
+    isPinned: true,
     author: {
       id: 2,
       name: 'Sandra Tomsfield thimad adf adfad adfa',
