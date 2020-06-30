@@ -15,6 +15,7 @@ import Profile from './screens/Profile';
 import Account from './screens/Account';
 import EditProfile from './screens/EditProfile';
 import Settings from './screens/Settings';
+import NotificationSettings from './screens/NotificationSettings';
 import Icon from './common/Icon';
 
 const Stack = createStackNavigator();
@@ -66,6 +67,10 @@ export default function App() {
           <Stack.Screen name="profile" component={Profile} />
           <Stack.Screen name="editprofile" component={EditProfile} />
           <Stack.Screen name="settings" component={Settings} />
+          <Stack.Screen
+            name="notificationsettings"
+            component={NotificationSettings}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

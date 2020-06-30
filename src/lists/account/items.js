@@ -15,23 +15,25 @@ export default [
     id: 'notifications',
     title: 'Notifications',
     icon: 'bells',
+    route: 'notificationsettings',
   },
   {
     id: 'privacy',
     title: 'Terms & Privacy',
     icon: 'lock1',
+    route: 'external',
   },
   {
     id: 'help',
     title: 'Get help',
     icon: 'questioncircleo',
-    navIcon: 'earth',
+    route: 'external',
   },
   {
     id: 'about',
     title: 'About',
     icon: 'info',
-    navIcon: 'earth',
+    route: 'external',
   },
   {
     id: 'logout',
