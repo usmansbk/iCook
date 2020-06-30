@@ -1,11 +1,12 @@
 import React from 'react';
 import numeral from 'numeral';
-import {View, Image, StyleSheet, TouchableNativeFeedback} from 'react-native';
+import {View, StyleSheet, TouchableNativeFeedback} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import IconButton from '../../common/IconButton';
 import colors from '../../config/colors';
 import formatDistance from 'date-fns/formatDistanceToNow';
+import Carousel from '../../common/Carousel';
 
 export default class Item extends React.Component {
   _onPress = () => this.props.onPressItem(this.props.id);
@@ -28,25 +29,25 @@ export default class Item extends React.Component {
       big,
     } = this.props;
     return (
-      <TouchableNativeFeedback disabled={disabled} onPress={this._onPress}>
-        <View style={styles.container}>
-          <View style={styles.header}>
-            <View style={styles.avatar}>
-              <Avatar
-                onPress={this._onPressAvatar}
-                uri={authorAvatar}
-                name={authorAvatar}
-                size="h3"
-              />
-            </View>
-            <Text numberOfLines={1} style={styles.name}>
-              {authorName}
-            </Text>
-            <Text style={styles.date}>
-              {formatDistance(new Date(date), {addSuffix: true})}
-            </Text>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.avatar}>
+            <Avatar
+              onPress={this._onPressAvatar}
+              uri={authorAvatar}
+              name={authorAvatar}
+              size="h3"
+            />
           </View>
-          <Image source={{uri: images[0]}} style={styles.image} />
+          <Text numberOfLines={1} style={styles.name}>
+            {authorName}
+          </Text>
+          <Text style={styles.date}>
+            {formatDistance(new Date(date), {addSuffix: true})}
+          </Text>
+        </View>
+        <Carousel imagesUrls={images} />
+        <TouchableNativeFeedback disabled={disabled} onPress={this._onPress}>
           <View style={styles.footer}>
             <View style={styles.buttons}>
               <View style={styles.row}>
@@ -77,8 +78,8 @@ export default class Item extends React.Component {
               </Text>
             </View>
           </View>
-        </View>
-      </TouchableNativeFeedback>
+        </TouchableNativeFeedback>
+      </View>
     );
   }
 }
