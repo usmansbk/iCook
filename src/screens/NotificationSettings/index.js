@@ -8,7 +8,6 @@ export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
   const {
     like = true,
-    pin = true,
     comment = true,
     newsletter = true,
     autoUpdate = false,

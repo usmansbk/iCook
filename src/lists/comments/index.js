@@ -17,6 +17,7 @@ export default ({navigation, data}) => {
           message={item.message}
           avatar={item.author.avatar}
           date={item.createdAt}
+          rating={item.rating}
           onPressAvatar={_onPressAvatar}
         />
       );

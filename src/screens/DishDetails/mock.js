@@ -162,6 +162,7 @@ export const comments = {
       },
       message: 'This really helped me alot, thank you',
       createdAt: new Date().toISOString(),
+      rating: 4,
     },
   ],
 };

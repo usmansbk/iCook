@@ -3,8 +3,9 @@ import datefns from 'date-fns/formatDistanceToNow';
 import {View, StyleSheet} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
+import Rating from '../../common/Rating';
 
-export default ({name, avatar, message, date, onPressAvatar}) => {
+export default ({name, avatar, message, date, onPressAvatar, rating}) => {
   return (
     <View style={styles.container}>
       <Avatar size="h4" name={name} uri={avatar} onPress={onPressAvatar} />
@@ -17,6 +18,7 @@ export default ({name, avatar, message, date, onPressAvatar}) => {
             {datefns(new Date(date), {addSuffix: true})}
           </Text>
         </View>
+        {Boolean(rating) && <Rating rating={rating} small />}
         <Text>{message}</Text>
       </View>
     </View>
