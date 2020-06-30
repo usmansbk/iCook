@@ -11,12 +11,16 @@ export default class Account extends React.Component {
     this.props.navigation.navigate('profile', {id: this.props.id});
   _renderHeader = () => {
     const name = 'Usman Suleiman Babakolo';
+    const email = 'usmansbk@gmail.com';
     return (
       <TouchableOpacity onPress={this._toProfile} style={styles.header}>
         <Avatar name={name} />
-        <Text style={styles.name} size="h1">
-          {name}
-        </Text>
+        <View style={styles.headerRight}>
+          <Text style={styles.name} size="h1">
+            {name}
+          </Text>
+          <Text>{email}</Text>
+        </View>
       </TouchableOpacity>
     );
   };
@@ -76,6 +80,9 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   name: {
+    flex: 1,
+  },
+  headerRight: {
     flex: 1,
     marginLeft: 8,
   },
