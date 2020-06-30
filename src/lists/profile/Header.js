@@ -7,15 +7,16 @@ import Text from '../../common/Text';
 import Button from '../../common/Button';
 import colors from '../../config/colors';
 
+const format = (val) => numeral(val).format(val > 1000 ? '0.0a' : '0a');
+
 const Stat = ({label, value, disabled, onPress}) => {
-  const format = value > 1000 ? '0.0a' : '0a';
   return (
     <TouchableOpacity
       style={styles.count}
       disabled={disabled}
       onPress={onPress}>
       <Text size="h2" style={styles.countValue}>
-        {numeral(value).format(format)}
+        {format(value)}
       </Text>
       <Text style={styles.countTitle}>{label}</Text>
     </TouchableOpacity>
@@ -42,7 +43,6 @@ export default ({
             <View style={styles.stats}>
               <Stat label="Followers" value={followersCount} />
               <Stat label="Following" value={followingCount} />
-              <Stat label="Recipes" value={recipeCount} />
             </View>
             <View>
               <Button text={me ? 'Edit information' : 'Follow'} />
@@ -57,7 +57,7 @@ export default ({
         </Text>
         <Text>{bio}</Text>
         <Text size="h3" style={styles.label}>
-          Dishes
+          Dishes ({format(recipeCount)})
         </Text>
       </View>
     </View>

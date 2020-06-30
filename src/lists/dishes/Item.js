@@ -65,7 +65,9 @@ export default class Item extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    paddingBottom: 40,
+  },
   image: {
     height: 248,
   },
