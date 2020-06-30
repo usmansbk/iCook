@@ -28,7 +28,11 @@ export default class Account extends React.Component {
   _renderItem = ({item}) => {
     const {title, icon, id, route} = item;
     const color = id === 'logout' ? colors.veryWeakRed : colors.text;
-    const onPress = () => this.props.navigation.navigate(route);
+    const onPress = () => {
+      if (route) {
+        this.props.navigation.navigate(route);
+      }
+    };
     return (
       <TouchableOpacity style={styles.itemContainer} onPress={onPress}>
         <View style={styles.label}>
