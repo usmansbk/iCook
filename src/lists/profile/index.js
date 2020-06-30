@@ -2,11 +2,10 @@ import React from 'react';
 import {FlatList} from 'react-native';
 import Header from './Header';
 import Item from '../dishes/Item';
-import mock from '../dishes/mock';
 
 export default class Profile extends React.Component {
   _renderHeader = () => {
-    return <Header />;
+    return <Header {...this.props.user} />;
   };
 
   _onPressItem = (id) => this.props.navigation.navigate('details', {id});
@@ -46,7 +45,7 @@ export default class Profile extends React.Component {
         initialNumToRender={1}
         ListHeaderComponent={this._renderHeader}
         renderItem={this._renderItem}
-        data={mock}
+        data={this.props.items}
       />
     );
   }

@@ -24,15 +24,15 @@ const Stat = ({label, value, disabled, onPress}) => {
 };
 
 export default ({
-  name = 'Ester Howard',
-  avatar = 'https://i.pravatar.cc/300',
-  followersCount = 4400,
-  followingCount = 2200,
-  recipeCount = 13,
-  me = true,
+  name,
+  avatar,
+  followersCount,
+  followingCount,
+  recipeCount,
+  me,
   isFollowing,
-  rating = 4,
-  bio = 'I love to cook, its just a part of me',
+  rating,
+  bio,
 }) => {
   return (
     <View style={styles.container}>
