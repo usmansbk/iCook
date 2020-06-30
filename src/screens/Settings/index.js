@@ -27,13 +27,14 @@ export default ({navigation}) => {
           color={colors.veryWeakRed}
           title="Close account"
           subtitle="Delete your account and account data"
+          noScreen
         />
       </View>
     </>
   );
 };
 
-const Item = ({color, title, subtitle, onPress = () => null}) => {
+const Item = ({color, title, subtitle, onPress = () => null, noScreen}) => {
   const c = {
     color,
   };
@@ -45,7 +46,7 @@ const Item = ({color, title, subtitle, onPress = () => null}) => {
         </Text>
         {Boolean(subtitle) && <Text>{subtitle}</Text>}
       </View>
-      <Icon name="right" size={22} />
+      {!noScreen && <Icon name="right" size={22} />}
     </TouchableOpacity>
   );
 };

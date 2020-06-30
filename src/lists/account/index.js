@@ -30,8 +30,12 @@ export default class Account extends React.Component {
     const color = id === 'logout' ? colors.veryWeakRed : colors.text;
     const iconName = route === 'external' ? 'earth' : 'right';
     const onPress = () => {
-      if (route) {
+      if (route === 'external') {
+        // open link
+      } else if (route) {
         this.props.navigation.navigate(route);
+      } else if (id === 'logout') {
+        // logout
       }
     };
     return (
