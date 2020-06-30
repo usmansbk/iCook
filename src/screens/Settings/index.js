@@ -11,6 +11,10 @@ export default ({navigation}) => {
     () => navigation.navigate('changepassword'),
     [navigation],
   );
+  const _toChangeEmail = React.useCallback(
+    () => navigation.navigate('changeemail'),
+    [navigation],
+  );
   const {
     email = 'usmansbk@gmail.com',
     gender = 'Male',
@@ -21,7 +25,7 @@ export default ({navigation}) => {
     <>
       <Header goBack={_goBack} title="Settings" />
       <View style={styles.container}>
-        <Item title="Email" subtitle={email} />
+        <Item title="Email" subtitle={email} onPress={_toChangeEmail} />
         <Item
           title="Password"
           subtitle="Change password"

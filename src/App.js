@@ -17,6 +17,7 @@ import EditProfile from './screens/EditProfile';
 import Settings from './screens/Settings';
 import NotificationSettings from './screens/NotificationSettings';
 import ChangePassword from './screens/ChangePassword';
+import ChangeEmail from './screens/Email';
 
 import Icon from './common/Icon';
 
@@ -70,6 +71,7 @@ export default function App() {
           <Stack.Screen name="editprofile" component={EditProfile} />
           <Stack.Screen name="settings" component={Settings} />
           <Stack.Screen name="changepassword" component={ChangePassword} />
+          <Stack.Screen name="changeemail" component={ChangeEmail} />
           <Stack.Screen
             name="notificationsettings"
             component={NotificationSettings}
