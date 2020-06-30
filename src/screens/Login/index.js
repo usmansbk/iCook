@@ -11,10 +11,11 @@ import Header from '../../common/Header';
 import Or from '../../common/Or';
 import colors from '../../config/colors';
 
-export default () => {
+export default ({navigation}) => {
+  const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
   return (
     <>
-      <Header title="Login" />
+      <Header goBack={_goBack} title="Login" />
       <Container>
         <View style={styles.container}>
           <Logo />

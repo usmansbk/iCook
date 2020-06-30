@@ -10,13 +10,16 @@ import PasswordStrength from '../../common/PasswordStrength';
 import colors from '../../config/colors';
 import {gender, countryCodes} from '../../lib/constants';
 
-export default () => {
+export default ({navigation}) => {
+  const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
   const [showPassword, setShowPassword] = React.useState(false);
   const _toggleVisibility = () => setShowPassword(!showPassword);
   return (
     <>
-      <Header goBack={() => null} title="Create an account" />
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      <Header goBack={_goBack} title="Create an account" />
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}>
         <View>
           <View style={styles.field}>
             <TextInput required label="Name" placeholder="Enter your name" />
