@@ -15,7 +15,7 @@ export default ({
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.container, active, style.button]}
+      style={[styles.container, active]}
       disabled={disabled}>
       <View style={styles.primary}>
         <Text style={[label, style.label]} size="body">

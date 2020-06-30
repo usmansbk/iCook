@@ -2,7 +2,9 @@ import React from 'react';
 import {StyleSheet, Image, View} from 'react-native';
 import Button from '../../common/Button';
 
-export default () => {
+export default ({navigation}) => {
+  React.useEffect(() => navigation.navigate('onboarding'));
+
   return (
     <View style={styles.container}>
       <View style={styles.head}>
@@ -30,6 +32,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     alignItems: 'center',
+    backgroundColor: 'white',
     flex: 1,
   },
   head: {
