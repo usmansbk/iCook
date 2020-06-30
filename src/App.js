@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {StatusBar} from 'react-native';
 import Welcome from './screens/Welcome';
 import Onboarding from './screens/Onboarding';
@@ -14,6 +15,17 @@ import Profile from './screens/Profile';
 import Account from './screens/Account';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const HomeTab = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Likes" component={Favorites} />
+      <Tab.Screen name="Account" component={Account} />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (
@@ -26,14 +38,12 @@ export default function App() {
           }}>
           <Stack.Screen name="welcome" component={Welcome} />
           <Stack.Screen name="onboarding" component={Onboarding} />
+          <Stack.Screen name="home" component={HomeTab} />
           <Stack.Screen name="login" component={Login} />
           <Stack.Screen name="signup" component={SignUp} />
           <Stack.Screen name="forgotPassword" component={ForgotPassword} />
-          <Stack.Screen name="home" component={Home} />
-          <Stack.Screen name="favorites" component={Favorites} />
           <Stack.Screen name="details" component={DishDetails} />
           <Stack.Screen name="profile" component={Profile} />
-          <Stack.Screen name="account" component={Account} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
