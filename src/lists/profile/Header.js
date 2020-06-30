@@ -55,7 +55,7 @@ export default ({
         </Text>
         <Text>{bio}</Text>
         <Text size="h3" style={styles.label}>
-          Dishes ({format(recipeCount)})
+          Recipes ({format(recipeCount)})
         </Text>
       </View>
     </View>

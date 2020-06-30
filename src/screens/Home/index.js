@@ -7,7 +7,7 @@ export default ({navigation}) => {
   // const _toProfile = () => navigation.navigate('profile');
   return (
     <View style={styles.container}>
-      <Header title="Dishes" rightIcon="plus" />
+      <Header title="Recipes" rightIcon="plus" />
       <Dishes navigation={navigation} />
     </View>
   );
