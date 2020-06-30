@@ -9,12 +9,14 @@ export default ({name, avatar, message, date, onPressAvatar}) => {
     <View style={styles.container}>
       <Avatar size="h4" name={name} uri={avatar} onPress={onPressAvatar} />
       <View style={styles.body}>
-        <Text numberOfLines={1} style={styles.name}>
-          {name}
-        </Text>
-        <Text size="subtitle">
-          {datefns(new Date(date), {addSuffix: true})}
-        </Text>
+        <View style={styles.nameLine}>
+          <Text numberOfLines={1} style={styles.name}>
+            {name}
+          </Text>
+          <Text size="subtitle">
+            {datefns(new Date(date), {addSuffix: true})}
+          </Text>
+        </View>
         <Text>{message}</Text>
       </View>
     </View>
@@ -27,9 +29,15 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   name: {
+    flex: 1,
     fontFamily: 'Poppins-SemiBold',
   },
   body: {
     paddingLeft: 8,
+    flex: 1,
+  },
+  nameLine: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });

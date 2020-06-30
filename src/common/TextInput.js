@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, StyleSheet} from 'react-native';
+import {View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from './Icon';
 import Text from './Text';
 import Dropdown from './Dropdown';
@@ -90,12 +90,15 @@ export default ({
           {...rest}
         />
         {Boolean(icon) && (
-          <Icon
+          <TouchableOpacity
             onPress={onPressIcon || _toggleVisibility}
-            size={iconSize}
-            color={focused ? colors.primary : undefined}
-            name={icon}
-          />
+            style={styles.icon}>
+            <Icon
+              size={iconSize}
+              color={focused ? colors.primary : undefined}
+              name={icon}
+            />
+          </TouchableOpacity>
         )}
       </View>
       {Boolean(errorMessage) && (
@@ -161,5 +164,8 @@ const styles = StyleSheet.create({
   },
   default: {
     borderColor: colors.inactive,
+  },
+  icon: {
+    padding: 8,
   },
 });

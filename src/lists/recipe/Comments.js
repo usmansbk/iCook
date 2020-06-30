@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Text from '../../common/Text';
-import TextInput from '../../common/TextInput';
 import CommentItem from '../comments/Item';
+import CommentInput from '../../forms/comment';
 import {comments} from '../../screens/DishDetails/mock';
 
 export default class Comments extends React.Component {
@@ -23,7 +23,7 @@ export default class Comments extends React.Component {
             date={item.createdAt}
           />
         ))}
-        <TextInput placeholder="Leave a comment" />
+        <CommentInput />
       </View>
     );
   }
