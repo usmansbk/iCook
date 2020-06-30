@@ -1,11 +1,24 @@
 import React from 'react';
 import {FlatList, TouchableOpacity, StyleSheet, View} from 'react-native';
+import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import Icon from '../../common/Icon';
 import items from './items';
 import colors from '../../config/colors';
 
 export default class Account extends React.Component {
+  _renderHeader = () => {
+    const name = 'Usman Suleiman Babakolo';
+    return (
+      <TouchableOpacity style={styles.header}>
+        <Avatar name={name} />
+        <Text style={styles.name} size="h1">
+          {name}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
+
   _renderItem = ({item}) => {
     const {title, icon, id} = item;
     const color = id === 'logout' ? colors.veryWeakRed : colors.text;
@@ -29,6 +42,7 @@ export default class Account extends React.Component {
         data={items}
         renderItem={this._renderItem}
         ListFooterComponent={this._renderFooter}
+        ListHeaderComponent={this._renderHeader}
       />
     );
   }
@@ -54,5 +68,13 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: colors.veryWeakRed,
+  },
+  header: {
+    flexDirection: 'row',
+    paddingBottom: 20,
+  },
+  name: {
+    flex: 1,
+    marginLeft: 8,
   },
 });
