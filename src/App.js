@@ -9,12 +9,13 @@ import Home from './screens/Home';
 import Favorites from './screens/Favorites';
 import DishDetails from './screens/DishDetails';
 import Profile from './screens/Profile';
+import Account from './screens/Account';
 
 export default () => {
   return (
     <>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <Profile />
+      <Account />
     </>
   );
 };
