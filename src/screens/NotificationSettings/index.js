@@ -9,7 +9,7 @@ export default ({navigation}) => {
   const {activityOnPost = false, newsletter = true, autoUpdate = true} = {};
   return (
     <>
-      <Header goBack={_goBack} title="Notifications Settings" />
+      <Header goBack={_goBack} title="Notifications" />
       <View style={styles.container}>
         <Item title="Activity on posts" value={activityOnPost} />
         <Item title="Newsletter" value={newsletter} />
