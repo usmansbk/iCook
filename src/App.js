@@ -14,7 +14,7 @@ export default () => {
   return (
     <>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <SignUp />
+      <Profile />
     </>
   );
 };

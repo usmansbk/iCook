@@ -1,4 +1,5 @@
 import React from 'react';
+import numeral from 'numeral';
 import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
@@ -51,7 +52,9 @@ export default class Item extends React.Component {
             <IconButton name="sharealt" color={colors.primary} />
           </View>
           <View style={styles.footerBody}>
-            <Text style={styles.boldText}>{likes} likes</Text>
+            <Text style={styles.boldText}>
+              {numeral(likes).format('0.0a')} likes
+            </Text>
             <Text style={styles.title}>{title}</Text>
             <Text numberOfLines={big ? undefined : 2}>{description}</Text>
           </View>
