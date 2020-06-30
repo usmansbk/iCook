@@ -16,6 +16,10 @@ export default function Dishes(props) {
     (id) => props.navigation.navigate('profile', {id}),
     [props.navigation],
   );
+  const _onPressComment = React.useCallback(
+    (id) => props.navigation.navigate('comments', {id}),
+    [props.navigation],
+  );
   const _renderItem = ({item}) => {
     const {
       id,
@@ -44,6 +48,7 @@ export default function Dishes(props) {
         isPinned={isPinned}
         onPressItem={_onPressItem}
         onPressAvatar={_onPressAvatar}
+        onPressComment={_onPressComment}
       />
     );
   };

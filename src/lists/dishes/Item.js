@@ -10,6 +10,7 @@ import formatDistance from 'date-fns/formatDistanceToNow';
 export default class Item extends React.Component {
   _onPress = () => this.props.onPressItem(this.props.id);
   _onPressAvatar = () => this.props.onPressAvatar(this.props.id);
+  _onPressComment = () => this.props.onPressComment(this.props.id);
 
   render() {
     const {
@@ -52,7 +53,7 @@ export default class Item extends React.Component {
                   color={isLiked ? colors.veryWeakRed : undefined}
                   name={`heart${isLiked ? '' : 'o'}`}
                 />
-                <IconButton name="message1" />
+                <IconButton name="message1" onPress={this._onPressComment} />
               </View>
               <View style={styles.row}>
                 <IconButton
