@@ -1,12 +1,14 @@
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {Image, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import Swiper from 'react-native-swiper';
 
-export default ({imagesUrls = []}) => {
+export default ({imagesUrls = [], onPress}) => {
   return (
     <Swiper loop={false} height={248}>
       {imagesUrls.map((uri) => (
-        <Image key={uri} source={{uri}} style={styles.image} />
+        <TouchableWithoutFeedback onPress={onPress}>
+          <Image key={uri} source={{uri}} style={styles.image} />
+        </TouchableWithoutFeedback>
       ))}
     </Swiper>
   );
