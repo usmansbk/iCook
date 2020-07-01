@@ -20,7 +20,9 @@ export default ({
       <TouchableOpacity onPress={_toProfile} style={styles.left}>
         <Avatar size="h3" name={name} uri={avatar} />
         <View style={styles.body}>
-          <Text numberOfLines={1} style={styles.name}>{name}</Text>
+          <Text numberOfLines={1} style={styles.name}>
+            {name}
+          </Text>
           <Text size="subtitle">{formatNumber(followersCount)} Followers</Text>
         </View>
       </TouchableOpacity>
