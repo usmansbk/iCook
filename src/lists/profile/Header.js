@@ -34,8 +34,22 @@ export default ({
   bio,
   toFollow,
 }) => {
-  const _toFollowers = () => toFollow({id, screen: 'followers', title: name});
-  const _toFollowing = () => toFollow({id, screen: 'following', title: name});
+  const _toFollowers = () =>
+    toFollow({
+      screen: 'followers',
+      title: name,
+      params: {
+        id,
+      },
+    });
+  const _toFollowing = () =>
+    toFollow({
+      screen: 'following',
+      title: name,
+      params: {
+        id,
+      },
+    });
 
   return (
     <View style={styles.container}>

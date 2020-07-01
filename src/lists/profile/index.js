@@ -10,9 +10,8 @@ export default class Profile extends React.Component {
 
   _onPressItem = (id) => this.props.navigation.navigate('details', {id});
   _onPressComment = (id) => this.props.navigation.navigate('comments', {id});
-  _toFollow = ({id, screen = 'followers', title}) =>
-    this.props.navigation.navigate('follow', {screen, id, title});
-  _onPressAvatar = (id) => null;
+  _toFollow = (options) => this.props.navigation.navigate('follow', options);
+  _onPressAvatar = () => null;
   _renderItem = ({item}) => {
     const {
       id,

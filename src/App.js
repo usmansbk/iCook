@@ -28,6 +28,7 @@ import Cart from './screens/Cart';
 import {Followers, Following} from './screens/Follow';
 
 import Icon from './common/Icon';
+import Header from './common/Header';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -100,7 +101,21 @@ export default function App() {
           <Stack.Screen name="changeregion" component={Country} />
           <Stack.Screen name="loginoptions" component={LoginOptions} />
           <Stack.Screen name="comments" component={Comments} />
-          <Stack.Screen name="follow" component={FollowTab} />
+          <Stack.Screen
+            options={({navigation, route}) => ({
+              headerShown: true,
+              header: () => (
+                <Header
+                  goBack={() => {
+                    navigation.goBack();
+                  }}
+                  title={route.params.title || 'Profile'}
+                />
+              ),
+            })}
+            name="follow"
+            component={FollowTab}
+          />
           <Stack.Screen
             name="notificationsettings"
             component={NotificationSettings}
