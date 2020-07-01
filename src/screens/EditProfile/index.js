@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Header from '../../common/Header';
 import TextInput from '../../common/TextInput';
 import Button from '../../common/Button';
@@ -19,16 +19,10 @@ export default ({navigation}) => {
       <Header title="Edit profile" goBack={goBack} />
       <View style={styles.container}>
         <View style={styles.avatar}>
-          <Avatar
-            name={name}
-            uri={avatar}
-            size="l1"
-            picker
-            onPress={() => null}
-          />
-          <View style={styles.picker}>
-            <Icon name="camera" color={colors.inactive} size={24} />
-          </View>
+          <Avatar name={name} uri={avatar} size="l1" picker />
+          <TouchableOpacity onPress={() => null} style={styles.picker}>
+            <Icon name="camera" color="white" size={24} />
+          </TouchableOpacity>
         </View>
         <View style={styles.field}>
           <TextInput label="Name" value={name} />
@@ -60,5 +54,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     bottom: 0,
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.primary,
   },
 });
