@@ -16,7 +16,7 @@ export default ({navigation}) => {
           <Image
             style={styles.image}
             resizeMode="contain"
-            source={require('../../assets/images/lock.png')}
+            source={require('../../assets/images/forgot.png')}
           />
           <View style={styles.subtitle}>
             <Text style={styles.subtitle}>
@@ -37,8 +37,8 @@ export default ({navigation}) => {
 
 const styles = StyleSheet.create({
   image: {
-    width: 104,
-    height: 136,
+    width: 200,
+    height: 200,
     marginVertical: 20,
     alignSelf: 'center',
   },

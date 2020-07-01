@@ -7,8 +7,8 @@ export default [
   },
   {
     id: 'newdish',
-    title: 'New Dish',
-    icon: 'form',
+    title: 'Sell Food',
+    icon: 'isv',
     route: 'new',
   },
   {
