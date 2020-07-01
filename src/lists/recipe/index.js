@@ -6,7 +6,6 @@ import Health from './Health';
 import SectionHeader from './SectionHeader';
 import Item from '../dishes/Item';
 import Comments from './Reviews';
-import {comments} from '../../screens/DishDetails/mock';
 
 export default class Recipe extends React.Component {
   _onPressAvatar = (id) => this.props.navigation.navigate('profile', {id});
@@ -74,8 +73,8 @@ export default class Recipe extends React.Component {
   _renderFooter = () => {
     return (
       <Comments
-        items={comments.items}
-        total={comments.count}
+        items={this.props.comments.items}
+        total={this.props.comments.count}
         toComments={this._onPressComment}
       />
     );

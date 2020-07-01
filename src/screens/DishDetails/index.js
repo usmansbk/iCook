@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Header from '../../common/Header';
 import Recipe from '../../lists/recipe';
-import mock from './mock';
+import mock, {comments} from './mock';
 
 export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
@@ -16,7 +16,7 @@ export default ({navigation}) => {
         rightIcon={me ? 'ellipsis1' : undefined}
         rightAction={_rightAction}
       />
-      <Recipe data={mock} navigation={navigation} />
+      <Recipe data={mock} comments={comments} navigation={navigation} />
     </View>
   );
 };
