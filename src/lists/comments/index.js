@@ -33,7 +33,7 @@ export default ({navigation, data}) => {
     <FlatList
       initialNumToRender={1}
       style={styles.container}
-      data={data.items}
+      data={data.items || []}
       renderItem={_renderItem}
       ItemSeparatorComponent={_renderSeparator}
       ListFooterComponent={_renderSeparator}

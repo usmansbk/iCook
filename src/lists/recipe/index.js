@@ -12,6 +12,10 @@ export default class Recipe extends React.Component {
   _onPressComment = () =>
     this.props.navigation.navigate('comments', {id: this.props.id});
   mapRecipeToSections = (recipe) => {
+    if (!recipe) {
+      return [];
+    }
+
     const sections = [];
     const ingredients = {
       data: recipe.ingredients,
