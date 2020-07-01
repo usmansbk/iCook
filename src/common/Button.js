@@ -28,15 +28,16 @@ export default ({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
     borderRadius: 5,
     marginVertical: 8,
+    height: 40,
   },
   primary: {
     flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 40,
+    paddingHorizontal: 10,
   },
   active: {
     backgroundColor: colors.primary,
