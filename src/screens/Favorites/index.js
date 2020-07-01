@@ -8,7 +8,12 @@ export default ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header title="Saved" />
-      <Dishes navigation={navigation} items={mock} />
+      <Dishes
+        navigation={navigation}
+        items={mock}
+        emptyTitle="You haven't saved any dish yet"
+        emptySubtitle="When you do they will show up here"
+      />
     </View>
   );
 };

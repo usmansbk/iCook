@@ -21,8 +21,8 @@ export default function Dishes(props) {
     [props.navigation],
   );
   const _renderEmpty = React.useCallback(() => {
-    return <Empty message="Nothing here yet" />;
-  }, []);
+    return <Empty message={props.emptyTitle} subtitle={props.emptySubtitle} />;
+  }, [props.emptySubtitle, props.emptyTitle]);
 
   const _renderItem = React.useCallback(
     ({item}) => {
@@ -61,7 +61,7 @@ export default function Dishes(props) {
     <FlatList
       ref={ref}
       initialNumToRender={1}
-      data={props.items || []}
+      data={[] || props.items || []}
       renderItem={_renderItem}
       ListEmptyComponent={_renderEmpty}
     />
