@@ -8,6 +8,7 @@ export default ({rating, small}) => {
   for (let i = 1; i < 6; i++) {
     stars.push(
       <Icon
+        key={i}
         name={i <= rating ? 'star' : 'staro'}
         color={colors.veryWeakRed}
         size={small ? 12 : undefined}
