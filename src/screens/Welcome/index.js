@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Image, View} from 'react-native';
-import Button from '../../common/Button';
 
 export default ({navigation}) => {
   React.useEffect(() => navigation.navigate('onboarding'));
@@ -20,9 +19,6 @@ export default ({navigation}) => {
             source={require('../../assets/images/iCook.png')}
           />
         </View>
-      </View>
-      <View style={styles.button}>
-        <Button text="Get started" />
       </View>
     </View>
   );
