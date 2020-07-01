@@ -7,7 +7,6 @@ import Rating from '../../common/Rating';
 import colors from '../../config/colors';
 import {formatNumber} from '../../lib/utils';
 
-
 const Stat = ({label, value, disabled, onPress}) => {
   return (
     <TouchableOpacity
@@ -59,7 +58,7 @@ export default ({
         </Text>
         <Text>{bio}</Text>
         <Text size="h3" style={styles.label}>
-          Meals ({format(recipeCount)})
+          Meals ({formatNumber(recipeCount)})
         </Text>
       </View>
     </View>
