@@ -22,6 +22,8 @@ import Gender from './screens/Gender';
 import Country from './screens/Country';
 import LoginOptions from './screens/LoginOptions';
 import Comments from './screens/Comments';
+import Notifications from './screens/Notifications';
+import Cart from './screens/Cart';
 
 import Icon from './common/Icon';
 
@@ -44,12 +46,18 @@ const HomeTab = () => {
             iconName = 'heart' + (focused ? '' : 'o');
           } else if (route.name === 'Account') {
             iconName = 'user';
+          } else if (route.name === 'Cart') {
+            iconName = 'shoppingcart';
+          } else if (route.name === 'Notifications') {
+            iconName = 'bells';
           }
           return <Icon name={iconName} color={color} size={size} />;
         },
       })}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Likes" component={Favorites} />
+      <Tab.Screen name="Cart" component={Cart} />
+      <Tab.Screen name="Notifications" component={Notifications} />
       <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
   );
