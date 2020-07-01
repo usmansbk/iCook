@@ -54,11 +54,15 @@ export default class Recipe extends React.Component {
         return <Health gain={item.gain} />;
       },
     };
-    sections.push(ingredients);
+    if (ingredients.data.length) {
+      sections.push(ingredients);
+    }
     if (steps.data.length) {
       sections.push(steps);
     }
-    sections.push(health);
+    if (health.data.length) {
+      sections.push(health);
+    }
 
     return sections;
   };
