@@ -6,7 +6,8 @@ export default ({message, subtitle}) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/fish.png')}
+        resizeMode="contain"
+        source={require('../../assets/images/waiting.png')}
         style={styles.image}
       />
       <Text style={styles.text} size="h1">
@@ -26,8 +27,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   image: {
-    height: 150,
-    width: 150,
+    height: 250,
+    width: 250,
     marginVertical: 20,
   },
   text: {

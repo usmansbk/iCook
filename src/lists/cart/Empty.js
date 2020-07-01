@@ -6,7 +6,7 @@ export default () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/fish.png')}
+        source={require('../../assets/images/cart.png')}
         style={styles.image}
       />
       <Text size="h1">Your Cart is Empty</Text>
@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   image: {
-    height: 150,
-    width: 150,
+    height: 250,
+    width: 250,
     marginVertical: 20,
   },
 });
