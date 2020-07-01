@@ -6,6 +6,7 @@ export function getAvatarBackgroundColor(name) {
   return avatarColors[colorIndex];
 }
 
-export const formatNumber = (val) => numeral(val).format(val > 10000 ? '0.0a' : '0a');
+export const formatNumber = (val) =>
+  numeral(val).format(val > 1000 ? '0.0a' : '0a');
 
 export const formatCurrency = (val) => numeral(val).format('0,0[.]00');
