@@ -18,6 +18,7 @@ export default ({
   disabled = false,
   error = false,
   icon,
+  leftIcon,
   iconSize = 20,
   multiline = false,
   dropdownPlaceholder,
@@ -72,6 +73,15 @@ export default ({
               noStyle
               value={234}
               items={countryCodes}
+            />
+          </View>
+        )}
+        {Boolean(leftIcon) && (
+          <View style={styles.leftIcon}>
+            <Icon
+              size={iconSize}
+              color={focused ? colors.primary : undefined}
+              name={leftIcon}
             />
           </View>
         )}
@@ -167,5 +177,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     padding: 8,
+  },
+  leftIcon: {
+    paddingRight: 8,
   },
 });

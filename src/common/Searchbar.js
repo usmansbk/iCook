@@ -1,6 +1,25 @@
 import React from 'react';
-import {Searchbar} from 'react-native-paper';
+import {View, StyleSheet} from 'react-native';
+import TextInput from './TextInput';
 
-export default ({placeholder}) => {
-  return <Searchbar placeholder={placeholder} />;
+export default ({placeholder, onChangeText, value}) => {
+  return (
+    <View style={styles.container}>
+      <TextInput
+        placeholder="Find food and chefs"
+        onChangeText={onChangeText}
+        value={value}
+        leftIcon="search1"
+        icon={value ? 'close' : undefined}
+      />
+    </View>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 6,
+    marginHorizontal: 20,
+    backgroundColor: 'transparent',
+  },
+});
