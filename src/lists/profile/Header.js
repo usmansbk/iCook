@@ -1,13 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import numeral from 'numeral';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import Button from '../../common/Button';
 import Rating from '../../common/Rating';
 import colors from '../../config/colors';
+import {formatNumber} from '../../lib/utils';
 
-const format = (val) => numeral(val).format(val > 1000 ? '0.0a' : '0a');
 
 const Stat = ({label, value, disabled, onPress}) => {
   return (
@@ -16,7 +15,7 @@ const Stat = ({label, value, disabled, onPress}) => {
       disabled={disabled}
       onPress={onPress}>
       <Text size="h2" style={styles.countValue}>
-        {format(value)}
+        {formatNumber(value)}
       </Text>
       <Text style={styles.countTitle}>{label}</Text>
     </TouchableOpacity>

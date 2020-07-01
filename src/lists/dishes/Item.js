@@ -7,6 +7,7 @@ import colors from '../../config/colors';
 import formatDistance from 'date-fns/formatDistanceToNow';
 import Carousel from '../../common/Carousel';
 import PriceTag from '../../common/PriceTag';
+import {formatNumber} from '../../lib/utils';
 
 export default class Item extends React.Component {
   _onPress = () => this.props.onPressItem(this.props.id);
@@ -21,6 +22,7 @@ export default class Item extends React.Component {
       images = [],
       title,
       isLiked,
+      likes = 2000,
       date,
       category,
       description,
@@ -61,7 +63,10 @@ export default class Item extends React.Component {
               </View>
             </View>
             <View style={styles.footerBody}>
-              <Text style={styles.title}>{title}</Text>
+              <Text style={styles.title}>{formatNumber(likes)} likes</Text>
+              <Text size="h3" style={styles.title}>
+                {title}
+              </Text>
               {Boolean(category) && <Text>{category}</Text>}
               <Text
                 style={styles.description}

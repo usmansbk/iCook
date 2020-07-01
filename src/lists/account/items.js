@@ -6,6 +6,12 @@ export default [
     route: 'editprofile',
   },
   {
+    id: 'newdish',
+    title: 'New Dish',
+    icon: 'form',
+    route: 'new',
+  },
+  {
     id: 'account',
     title: 'Account settings',
     icon: 'user',
