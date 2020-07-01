@@ -2,7 +2,7 @@ import React from 'react';
 import {FlatList} from 'react-native';
 import {useScrollToTop} from '@react-navigation/native';
 import Item from './Item';
-import data from './mock';
+import Empty from './Empty';
 
 export default function Dishes(props) {
   const ref = React.useRef(null);
@@ -20,42 +20,50 @@ export default function Dishes(props) {
     (id) => props.navigation.navigate('comments', {id}),
     [props.navigation],
   );
-  const _renderItem = ({item}) => {
-    const {
-      id,
-      title,
-      description,
-      author,
-      commentsCount,
-      images,
-      createdAt,
-      isLiked,
-      isPinned,
-    } = item;
-    return (
-      <Item
-        id={id}
-        title={title}
-        description={description}
-        authorAvatar={author.avatar}
-        authorName={author.name}
-        commentsCount={commentsCount}
-        images={images}
-        date={createdAt}
-        isLiked={isLiked}
-        isPinned={isPinned}
-        onPressItem={_onPressItem}
-        onPressAvatar={_onPressAvatar}
-        onPressComment={_onPressComment}
-      />
-    );
-  };
+  const _renderEmpty = React.useCallback(() => {
+    return <Empty message="Nothing here yet" />;
+  }, []);
+
+  const _renderItem = React.useCallback(
+    ({item}) => {
+      const {
+        id,
+        title,
+        description,
+        author,
+        commentsCount,
+        images,
+        createdAt,
+        isLiked,
+        isPinned,
+      } = item;
+      return (
+        <Item
+          id={id}
+          title={title}
+          description={description}
+          authorAvatar={author.avatar}
+          authorName={author.name}
+          commentsCount={commentsCount}
+          images={images}
+          date={createdAt}
+          isLiked={isLiked}
+          isPinned={isPinned}
+          onPressItem={_onPressItem}
+          onPressAvatar={_onPressAvatar}
+          onPressComment={_onPressComment}
+        />
+      );
+    },
+    [_onPressAvatar, _onPressComment, _onPressItem],
+  );
   return (
     <FlatList
       ref={ref}
       initialNumToRender={1}
-      data={data}
+      data={props.items || []}
       renderItem={_renderItem}
+      ListEmptyComponent={_renderEmpty}
     />
   );
 }
