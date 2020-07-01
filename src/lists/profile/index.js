@@ -5,11 +5,13 @@ import Item from '../dishes/Item';
 
 export default class Profile extends React.Component {
   _renderHeader = () => {
-    return <Header {...this.props.user} />;
+    return <Header {...this.props.user} toFollow={this._toFollow} />;
   };
 
   _onPressItem = (id) => this.props.navigation.navigate('details', {id});
   _onPressComment = (id) => this.props.navigation.navigate('comments', {id});
+  _toFollow = ({id, screen = 'followers', title}) =>
+    this.props.navigation.navigate('follow', {screen, id, title});
   _onPressAvatar = (id) => null;
   _renderItem = ({item}) => {
     const {

@@ -76,6 +76,7 @@ export default class Recipe extends React.Component {
         items={this.props.comments.items}
         total={this.props.comments.count}
         toComments={this._onPressComment}
+        onPressAvatar={this._onPressAvatar}
       />
     );
   };

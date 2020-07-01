@@ -22,6 +22,7 @@ const Stat = ({label, value, disabled, onPress}) => {
 };
 
 export default ({
+  id,
   name,
   avatar,
   followersCount,
@@ -31,7 +32,11 @@ export default ({
   isFollowing,
   rating,
   bio,
+  toFollow,
 }) => {
+  const _toFollowers = () => toFollow({id, screen: 'followers', title: name});
+  const _toFollowing = () => toFollow({id, screen: 'following', title: name});
+
   return (
     <View style={styles.container}>
       <View style={styles.container}>
@@ -39,8 +44,16 @@ export default ({
           <Avatar size="h1" uri={avatar} name={name} />
           <View style={styles.body}>
             <View style={styles.stats}>
-              <Stat label="Followers" value={followersCount} />
-              <Stat label="Following" value={followingCount} />
+              <Stat
+                label="Followers"
+                value={followersCount}
+                onPress={_toFollowers}
+              />
+              <Stat
+                label="Following"
+                value={followingCount}
+                onPress={_toFollowing}
+              />
             </View>
             {!me && (
               <View>

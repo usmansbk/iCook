@@ -6,6 +6,7 @@ import CommentInput from '../../forms/comment';
 
 export default class Comments extends React.Component {
   _toComments = () => this.props.toComments();
+  _onPressAvatar = (id) => this.props.onPressAvatar(this.props.id);
   render() {
     const {total, items = []} = this.props;
     return (
@@ -21,6 +22,7 @@ export default class Comments extends React.Component {
             message={item.message}
             avatar={item.author.avatar}
             date={item.createdAt}
+            onPressAvatar={this._onPressAvatar}
           />
         ))}
         <View style={styles.input}>

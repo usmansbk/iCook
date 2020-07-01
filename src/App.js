@@ -2,6 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {StatusBar} from 'react-native';
 import Welcome from './screens/Welcome';
 import Onboarding from './screens/Onboarding';
@@ -24,11 +25,22 @@ import LoginOptions from './screens/LoginOptions';
 import Comments from './screens/Comments';
 import Notifications from './screens/Notifications';
 import Cart from './screens/Cart';
+import {Followers, Following} from './screens/Follow';
 
 import Icon from './common/Icon';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+const TopTab = createMaterialTopTabNavigator();
+
+const FollowTab = () => {
+  return (
+    <TopTab.Navigator>
+      <TopTab.Screen name="followers" component={Followers} />
+      <TopTab.Screen name="following" component={Following} />
+    </TopTab.Navigator>
+  );
+};
 
 const HomeTab = () => {
   return (
@@ -88,6 +100,7 @@ export default function App() {
           <Stack.Screen name="changeregion" component={Country} />
           <Stack.Screen name="loginoptions" component={LoginOptions} />
           <Stack.Screen name="comments" component={Comments} />
+          <Stack.Screen name="follow" component={FollowTab} />
           <Stack.Screen
             name="notificationsettings"
             component={NotificationSettings}
