@@ -5,8 +5,8 @@ import Carousel from '../../common/Carousel';
 import Button from '../../common/Button';
 import {currencies} from '../../lib/constants';
 
-export default () => {
-  const {images = []} = {};
+export default ({values = {}}) => {
+  const {images = []} = values;
   return (
     <ScrollView style={styles.container}>
       <View style={styles.field}>
@@ -51,7 +51,7 @@ export default () => {
           icon="pluscircleo"
         />
       </View>
-      {Boolean(images.length) && <Carousel imagesUrls={images} />}
+      {Boolean(images.length) && <Carousel edit imagesUrls={images} />}
       <View style={styles.field}>
         <Button text="Add food image" />
       </View>

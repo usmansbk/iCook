@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../common/Header';
 import Food from '../../forms/food';
 import colors from '../../config/colors';
+import mock from './mock';
 
 export default ({navigation, route}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
@@ -16,7 +17,7 @@ export default ({navigation, route}) => {
         rightIcon="close"
         rightIconColor={colors.veryWeakRed}
       />
-      <Food />
+      <Food values={mock} />
     </>
   );
 };
