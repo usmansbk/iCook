@@ -8,6 +8,11 @@ import colors from '../config/colors';
 export default class Confirm extends React.Component {
   _rbRef = (ref) => (this.rbsheet = ref);
   open = () => this.rbsheet.open();
+  _close = () => this.rbsheet.close();
+  _onCofirm = () => {
+    this._close();
+    this.props.onConfirm && this.props.onConfirm();
+  };
 
   render() {
     const {title, message} = this.props;
@@ -19,8 +24,13 @@ export default class Confirm extends React.Component {
           </Text>
           <Text>{message}</Text>
           <View style={styles.footer}>
-            <Button customStyle={[styles.button, styles.cancel]} text="No" />
             <Button
+              onPress={this._close}
+              customStyle={[styles.button, styles.cancel]}
+              text="No"
+            />
+            <Button
+              onPress={this._onCofirm}
               customStyle={[styles.button, styles.destruction]}
               text="Yes"
             />
