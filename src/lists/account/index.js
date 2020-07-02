@@ -3,10 +3,12 @@ import {FlatList, TouchableOpacity, StyleSheet, View} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import Icon from '../../common/Icon';
+import Confirm from '../../common/Confirm';
 import items from './items';
 import colors from '../../config/colors';
 
 export default class Account extends React.Component {
+  _confirmRef = (ref) => (this.confirm = ref);
   _toProfile = () =>
     this.props.navigation.navigate('profile', {id: this.props.id});
   _renderHeader = () => {
@@ -35,7 +37,7 @@ export default class Account extends React.Component {
       } else if (route) {
         this.props.navigation.navigate(route);
       } else if (id === 'logout') {
-        // logout
+        console.log(this.confirm.open());
       }
     };
     return (
@@ -53,13 +55,16 @@ export default class Account extends React.Component {
 
   render() {
     return (
-      <FlatList
-        style={styles.container}
-        data={items}
-        renderItem={this._renderItem}
-        ListFooterComponent={this._renderFooter}
-        ListHeaderComponent={this._renderHeader}
-      />
+      <>
+        <FlatList
+          style={styles.container}
+          data={items}
+          renderItem={this._renderItem}
+          ListFooterComponent={this._renderFooter}
+          ListHeaderComponent={this._renderHeader}
+        />
+        <Confirm title="Are you sure?" ref={this._confirmRef} />
+      </>
     );
   }
 }

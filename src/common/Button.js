@@ -5,6 +5,7 @@ import Text from './Text';
 
 export default ({
   style = {},
+  customStyle = {},
   text = 'Button',
   disabled,
   onPress = () => null,
@@ -15,7 +16,7 @@ export default ({
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.container, active, style.container]}
+      style={[styles.container, active, customStyle, style.container]}
       disabled={disabled}>
       <View style={styles.primary}>
         <Text style={[label, style.label]} size="body">
