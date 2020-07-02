@@ -32,6 +32,7 @@ export default ({
   isFollowing,
   rating,
   bio,
+  address,
   toFollow,
 }) => {
   const _toFollowers = () =>
@@ -80,10 +81,22 @@ export default ({
           {name}
         </Text>
         {Boolean(rating) && <Rating rating={rating} />}
-        <Text size="h3" style={styles.label}>
-          Bio:
-        </Text>
-        <Text>{bio}</Text>
+        {Boolean(address) && (
+          <>
+            <Text size="h3" style={styles.label}>
+              Address
+            </Text>
+            <Text>{address}</Text>
+          </>
+        )}
+        {Boolean(bio) && (
+          <>
+            <Text size="h3" style={styles.label}>
+              About
+            </Text>
+            <Text>{bio}</Text>
+          </>
+        )}
         <Text size="h3" style={styles.label}>
           Meals ({formatNumber(recipeCount)})
         </Text>
