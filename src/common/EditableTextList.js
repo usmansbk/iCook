@@ -50,6 +50,7 @@ function Item({
             multiline
             leftIcon="closecircle"
             onPressIcon={_onSubmit}
+            onBlur={_onSubmit}
             onPressLeftIcon={onDelete}
             autoFocus
           />

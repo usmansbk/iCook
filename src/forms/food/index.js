@@ -11,7 +11,7 @@ import {currencies} from '../../lib/constants';
 export default ({values = {}}) => {
   const {images = [], ingredients = [], healthBenefits = []} = values;
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView keyboardShouldPersistTaps="always" style={styles.container}>
       <View style={styles.field}>
         <TextInput required label="Title" placeholder="Food name" />
       </View>
