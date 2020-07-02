@@ -9,8 +9,10 @@ export default () => {
         source={require('../../assets/images/waiting.png')}
         style={styles.image}
       />
-      <Text size="h1">No Activity</Text>
-      <Text style={styles.subtitle}>
+      <Text style={styles.text} size="h1">
+        No Activity
+      </Text>
+      <Text style={styles.text}>
         Notifications about your activity will show up here
       </Text>
     </View>
@@ -19,17 +21,16 @@ export default () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-  },
-  subtitle: {
-    textAlign: 'center',
   },
   image: {
     height: 250,
     width: 250,
     marginVertical: 20,
+  },
+  text: {
+    textAlign: 'center',
   },
 });
