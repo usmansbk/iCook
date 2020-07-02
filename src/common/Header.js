@@ -5,7 +5,7 @@ import Text from './Text';
 import Icon from './Icon';
 import colors from '../config/colors';
 
-export default ({title, goBack, rightAction, rightIcon}) => {
+export default ({title, goBack, rightAction, rightIcon, rightIconColor}) => {
   return (
     <Appbar.Header style={styles.header}>
       {Boolean(goBack) && (
@@ -28,7 +28,7 @@ export default ({title, goBack, rightAction, rightIcon}) => {
       {Boolean(rightAction) && (
         <Appbar.Action
           onPress={rightAction}
-          color={colors.text}
+          color={rightIconColor || colors.text}
           icon={({color, size}) => (
             <Icon size={size} color={color} name={rightIcon} />
           )}
