@@ -51,6 +51,9 @@ export default ({
         id,
       },
     });
+  const _openMap = () => {
+    console.log(address);
+  };
 
   return (
     <View style={styles.container}>
@@ -86,7 +89,7 @@ export default ({
             <Text size="h3" style={styles.label}>
               Address
             </Text>
-            <Text>{address}</Text>
+            <Text onPress={_openMap}>{address}</Text>
           </>
         )}
         {Boolean(bio) && (

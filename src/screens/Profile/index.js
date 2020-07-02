@@ -16,6 +16,7 @@ export default ({navigation}) => {
     isFollowing: false,
     rating: 4,
     bio: 'I love to cook, its just a part of me',
+    address: 'NWRI',
   };
   return (
     <>
