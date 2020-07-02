@@ -8,7 +8,6 @@ const openDialer = (number) => {
   } else {
     phone = `tel:${number}`;
   }
-  console.log(phone);
   Linking.openURL(phone).catch(console.log);
 };
 
