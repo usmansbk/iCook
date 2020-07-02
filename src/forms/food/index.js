@@ -9,6 +9,15 @@ import HealthList from './Health';
 import {currencies} from '../../lib/constants';
 
 export default ({values = {}}) => {
+  const [mount, setMount] = React.useState(false);
+  React.useEffect(() => {
+    setMount(true);
+  }, []);
+
+  if (!mount) {
+    return null;
+  }
+
   const {images = [], ingredients = [], healthBenefits = []} = values;
   return (
     <ScrollView keyboardShouldPersistTaps="always" style={styles.container}>

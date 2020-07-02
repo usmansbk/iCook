@@ -12,6 +12,14 @@ import {countryCodes} from '../../lib/constants';
 
 export default ({navigation}) => {
   const goBack = React.useCallback(() => navigation.goBack(), [navigation]);
+  const [mount, setMount] = React.useState(false);
+  React.useEffect(() => {
+    setMount(true);
+  }, []);
+
+  if (!mount) {
+    return null;
+  }
   const {name = 'Usman', avatar, address, bio = '', showNumber = true} = {};
   return (
     <>

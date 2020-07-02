@@ -6,6 +6,14 @@ import Text from '../../common/Text';
 
 export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
+  const [mount, setMount] = React.useState(false);
+  React.useEffect(() => {
+    setMount(true);
+  }, []);
+
+  if (!mount) {
+    return null;
+  }
   const {
     like = true,
     comment = true,

@@ -6,6 +6,14 @@ import mock, {comments} from './mock';
 
 export default ({navigation}) => {
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
+  const [mount, setMount] = React.useState(false);
+  React.useEffect(() => {
+    setMount(true);
+  }, []);
+
+  if (!mount) {
+    return null;
+  }
   const _rightAction = () => null;
   const {me = true} = {};
   return (
