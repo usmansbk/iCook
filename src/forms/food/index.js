@@ -42,9 +42,7 @@ export default ({values = {}}) => {
       </View>
       <View style={styles.field}>
         <Text>Ingredients</Text>
-        <View>
-          <IngredientsList items={ingredients} />
-        </View>
+        <IngredientsList items={ingredients} />
         <Button text="Add Ingredient" />
       </View>
       <View style={styles.field}>

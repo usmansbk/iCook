@@ -1,22 +1,19 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import Text from './Text';
 
-export default class Ingredient extends React.Component {
-  render() {
-    const {quantity, unit, of} = this.props;
-    return (
-      <View style={styles.row}>
-        <Text style={styles.qty}>
-          {quantity} {unit}
-        </Text>
-        <Text style={styles.of}>
-          {unit ? ' of ' : ' '}
-          {of}
-        </Text>
-      </View>
-    );
-  }
+export default function Item({quantity, unit, of, onPress}) {
+  return (
+    <TouchableOpacity style={styles.row} onPress={onPress} disabled={!onPress}>
+      <Text style={styles.qty}>
+        {quantity} {unit}
+      </Text>
+      <Text style={styles.of}>
+        {unit ? ' of ' : ' '}
+        {of}
+      </Text>
+    </TouchableOpacity>
+  );
 }
 
 const styles = StyleSheet.create({
