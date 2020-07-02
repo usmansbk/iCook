@@ -1,5 +1,10 @@
 import React from 'react';
-import {View, TouchableOpacity, StyleSheet} from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  ActivityIndicator,
+} from 'react-native';
 import colors, {withOpacity} from '../config/colors';
 import Text from './Text';
 
@@ -9,6 +14,7 @@ export default ({
   text = 'Button',
   disabled,
   onPress = () => null,
+  loading,
 }) => {
   const active = disabled ? styles.inactive : style.button || styles.active;
   const label = disabled ? styles.inactiveLabel : styles.activeLabel;
@@ -19,9 +25,13 @@ export default ({
       style={[styles.container, active, customStyle, style.container]}
       disabled={disabled}>
       <View style={styles.primary}>
-        <Text style={[label, style.label]} size="body">
-          {text}
-        </Text>
+        {loading ? (
+          <ActivityIndicator color="white" />
+        ) : (
+          <Text style={[label, style.label]} size="body">
+            {text}
+          </Text>
+        )}
       </View>
     </TouchableOpacity>
   );

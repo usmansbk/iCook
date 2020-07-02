@@ -3,9 +3,12 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Header from '../../common/Header';
 import Text from '../../common/Text';
 import Icon from '../../common/Icon';
+import Confirm from '../../common/Confirm';
 import colors from '../../config/colors';
 
 export default ({navigation}) => {
+  const confirmRef = React.useRef(null);
+
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
   const _toChangePassword = React.useCallback(
     () => navigation.navigate('changepassword'),
@@ -54,8 +57,14 @@ export default ({navigation}) => {
           title="Close account"
           subtitle="Delete your account and account data"
           noScreen
+          onPress={() => confirmRef.current.open()}
         />
       </View>
+      <Confirm
+        title="Are you sure?"
+        ref={confirmRef}
+        message="This will delete all your data. We'll send you an email as the final step to confirm."
+      />
     </>
   );
 };
