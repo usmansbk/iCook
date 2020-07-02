@@ -4,6 +4,7 @@ import TextInput from '../../common/TextInput';
 import Text from '../../common/Text';
 import Carousel from '../../common/Carousel';
 import Button from '../../common/Button';
+import IngredientsList from './Ingredients';
 import {currencies} from '../../lib/constants';
 
 export default ({values = {}}) => {
@@ -40,6 +41,9 @@ export default ({values = {}}) => {
       </View>
       <View style={styles.field}>
         <Text>Ingredients</Text>
+        <View>
+          <IngredientsList />
+        </View>
         <Button text="Add Ingredient" />
       </View>
       <View style={styles.field}>
