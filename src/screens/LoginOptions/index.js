@@ -60,13 +60,13 @@ export default ({navigation}) => {
 
 const Item = ({title, subtitle, value, onPress = () => null}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.item}>
-      <View>
+    <View style={styles.item}>
+      <TouchableOpacity onPress={onPress}>
         <Text size="h2">{title}</Text>
         <Text>{subtitle}</Text>
-      </View>
+      </TouchableOpacity>
       <Switch onPress={onPress} value={value} />
-    </TouchableOpacity>
+    </View>
   );
 };
 
