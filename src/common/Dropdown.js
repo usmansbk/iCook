@@ -20,7 +20,7 @@ export default ({
       <View style={!noStyle && styles.border}>
         <RNPickerSelect
           disabled={disabled}
-          value={value}
+          value={value || items[0].value}
           items={items}
           useNativeAndroidPickerStyle={false}
           onValueChange={onValueChange}

@@ -23,3 +23,8 @@ export const countryCodes = [
 export const currencySymbols = {
   NGN: '₦',
 };
+
+export const currencies = Object.keys(currencySymbols).map((key) => ({
+  label: currencySymbols[key],
+  value: key,
+}));

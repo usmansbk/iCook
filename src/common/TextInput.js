@@ -4,12 +4,12 @@ import Icon from './Icon';
 import Text from './Text';
 import Dropdown from './Dropdown';
 import colors, {withOpacity} from '../config/colors';
-import {countryCodes} from '../lib/constants';
 
 export default ({
   secure,
   required,
   value = '',
+  dropValue = '',
   label,
   items,
   placeholder,
@@ -71,8 +71,8 @@ export default ({
             <Dropdown
               placeholder={dropdownPlaceholder}
               noStyle
-              value={234}
-              items={countryCodes}
+              value={dropValue}
+              items={items}
             />
           </View>
         )}
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
   },
   dropdown: {
-    width: 80,
+    minWidth: 80,
   },
   border: {
     borderWidth: 1,

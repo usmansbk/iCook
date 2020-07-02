@@ -1,10 +1,14 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, ScrollView} from 'react-native';
 import TextInput from '../../common/TextInput';
+import Carousel from '../../common/Carousel';
+import Button from '../../common/Button';
+import {currencies} from '../../lib/constants';
 
 export default () => {
+  const {images = []} = {};
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.field}>
         <TextInput required label="Title" placeholder="Food name" />
       </View>
@@ -19,8 +23,10 @@ export default () => {
         <TextInput
           label="Price"
           required
+          items={currencies}
           keyboardType="number-pad"
           placeholder="Reasonable price"
+          dropdownPlaceholder="Currency"
         />
       </View>
       <View style={styles.field}>
@@ -45,17 +51,26 @@ export default () => {
           icon="pluscircleo"
         />
       </View>
-    </View>
+      {Boolean(images.length) && <Carousel imagesUrls={images} />}
+      <View style={styles.field}>
+        <Button text="Add food image" />
+      </View>
+      <View style={[styles.field, styles.last]}>
+        <Button text="Create dish" />
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'white',
     padding: 20,
   },
   field: {
     marginVertical: 10,
+  },
+  last: {
+    paddingBottom: 20,
   },
 });
