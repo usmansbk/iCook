@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import TextInput from '../../common/TextInput';
+import Text from '../../common/Text';
 import Carousel from '../../common/Carousel';
 import Button from '../../common/Button';
 import {currencies} from '../../lib/constants';
@@ -38,16 +39,14 @@ export default ({values = {}}) => {
         />
       </View>
       <View style={styles.field}>
-        <TextInput
-          label="Ingredients"
-          placeholder="Add ingredient"
-          icon="pluscircleo"
-        />
+        <Text>Ingredients</Text>
+        <Button text="Add Ingredient" />
       </View>
       <View style={styles.field}>
         <TextInput
           label="Health Benefits"
           placeholder="Add benefit"
+          multiline
           icon="pluscircleo"
         />
       </View>
