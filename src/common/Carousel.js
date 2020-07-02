@@ -4,7 +4,12 @@ import Swiper from 'react-native-swiper';
 import IconButton from './IconButton';
 import colors from '../config/colors';
 
-export default ({imagesUrls = [], onPress, edit = false}, onDelete) => {
+export default ({
+  imagesUrls = [],
+  onPress = () => null,
+  edit = false,
+  onDelete = () => null,
+}) => {
   return (
     <Swiper loop={false} height={248}>
       {imagesUrls.map((uri, index) => (
