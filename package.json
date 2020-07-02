@@ -19,7 +19,6 @@
     "numeral": "^2.0.6",
     "react": "^16.13.1",
     "react-native": "0.62.2",
-    "react-native-draggable-flatlist": "^2.3.3",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-paper": "^3.10.1",
     "react-native-picker-select": "^7.0.0",
