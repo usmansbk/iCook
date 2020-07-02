@@ -3,20 +3,57 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Header from '../../common/Header';
 import Switch from '../../common/Switch';
 import Text from '../../common/Text';
+import Confirm from '../../common/Confirm';
 
 export default ({navigation}) => {
+  const confirmRef = React.useRef(null);
+  const [option, setOption] = React.useState(null);
   const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
   const {
     facebook = 'bigpanda@gmail.com',
     google = 'littlepanda@gmail.com',
   } = {};
+  const _toggleGoogle = () => {
+    if (google) {
+      setOption('Google');
+      confirmRef.current.open();
+    }
+  };
+  const _toggleFacebook = () => {
+    if (facebook) {
+      setOption('Facebook');
+      confirmRef.current.open();
+    }
+  };
+
+  const _onConfirm = () => {
+    console.log('disconnect', option);
+    setOption(null);
+  };
+
   return (
     <>
-      <Header goBack={_goBack} title="Notifications" />
+      <Header goBack={_goBack} title="Login Options" />
       <View style={styles.container}>
-        <Item title="Facebook" subtitle={facebook} value={Boolean(facebook)} />
-        <Item title="Google" subtitle={google} value={Boolean(google)} />
+        <Item
+          title="Facebook"
+          onPress={_toggleFacebook}
+          subtitle={facebook}
+          value={Boolean(facebook)}
+        />
+        <Item
+          title="Google"
+          onPress={_toggleGoogle}
+          subtitle={google}
+          value={Boolean(google)}
+        />
       </View>
+      <Confirm
+        title={`Disconnect ${option}`}
+        ref={confirmRef}
+        message="This will delete your credentials from our database"
+        onConfirm={_onConfirm}
+      />
     </>
   );
 };
@@ -28,7 +65,7 @@ const Item = ({title, subtitle, value, onPress = () => null}) => {
         <Text size="h2">{title}</Text>
         <Text>{subtitle}</Text>
       </View>
-      <Switch value={value} />
+      <Switch onPress={onPress} value={value} />
     </TouchableOpacity>
   );
 };
