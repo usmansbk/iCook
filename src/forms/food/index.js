@@ -55,7 +55,7 @@ export default ({values = {}}) => {
         <Button text="Add food image" />
       </View>
       <View style={[styles.field, styles.last]}>
-        <Button text="Create dish" />
+        <Button text="Save dish" />
       </View>
     </ScrollView>
   );

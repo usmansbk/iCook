@@ -26,10 +26,18 @@ export default ({
           <Text size="subtitle">{formatNumber(followersCount)} Followers</Text>
         </View>
       </TouchableOpacity>
-      {!me && <Button text={isFollowing ? 'Unfollow' : 'Follow'} />}
+      {!me && (
+        <Button style={btnStyles} text={isFollowing ? 'Unfollow' : 'Follow'} />
+      )}
     </View>
   );
 };
+
+const btnStyles = StyleSheet.create({
+  container: {
+    minWidth: 80,
+  },
+});
 
 const styles = StyleSheet.create({
   container: {
