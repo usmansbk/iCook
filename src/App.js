@@ -26,6 +26,7 @@ import Comments from './screens/Comments';
 import Notifications from './screens/Notifications';
 import Cart from './screens/Cart';
 import {Followers, Following} from './screens/Follow';
+import EditFood from './screens/EditFood';
 
 import Icon from './common/Icon';
 import Header from './common/Header';
@@ -100,6 +101,7 @@ export default function App() {
           <Stack.Screen name="changegender" component={Gender} />
           <Stack.Screen name="changeregion" component={Country} />
           <Stack.Screen name="loginoptions" component={LoginOptions} />
+          <Stack.Screen name="editfood" component={EditFood} />
           <Stack.Screen name="comments" component={Comments} />
           <Stack.Screen
             options={({navigation, route}) => ({

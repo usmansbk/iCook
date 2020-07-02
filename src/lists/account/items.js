@@ -9,7 +9,7 @@ export default [
     id: 'newdish',
     title: 'Sell Food',
     icon: 'isv',
-    route: 'new',
+    route: 'editfood',
   },
   {
     id: 'account',
