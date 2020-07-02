@@ -1,5 +1,4 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
 import Header from '../../common/Header';
 
 export default ({navigation, route}) => {
@@ -11,7 +10,3 @@ export default ({navigation, route}) => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {},
-});
