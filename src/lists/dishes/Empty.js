@@ -14,7 +14,7 @@ export default ({message, subtitle}) => {
         {message || 'Your List is Empty'}
       </Text>
       <Text style={styles.text}>
-        {subtitle || 'Follow a user or create a dish'}
+        {subtitle || 'Follow a user or add a new dish'}
       </Text>
     </View>
   );
