@@ -1,7 +1,7 @@
 import React from 'react';
 import {SectionList} from 'react-native';
 import Ingredient from './Ingredient';
-import Step from './Step';
+// import Step from './Step';
 import Health from './Health';
 import SectionHeader from './SectionHeader';
 import Item from '../dishes/Item';
