@@ -34,6 +34,7 @@ export default ({
   bio,
   address,
   toFollow,
+  phoneNumber,
 }) => {
   const _toFollowers = () =>
     toFollow({
@@ -54,6 +55,8 @@ export default ({
   const _openMap = () => {
     console.log(address);
   };
+
+  const _openDialer = () => console.log(phoneNumber);
 
   return (
     <View style={styles.container}>
@@ -84,14 +87,6 @@ export default ({
           {name}
         </Text>
         {Boolean(rating) && <Rating rating={rating} />}
-        {Boolean(address) && (
-          <>
-            <Text size="h3" style={styles.label}>
-              Address
-            </Text>
-            <Text onPress={_openMap}>{address}</Text>
-          </>
-        )}
         {Boolean(bio) && (
           <>
             <Text size="h3" style={styles.label}>
@@ -99,6 +94,22 @@ export default ({
             </Text>
             <Text>{bio}</Text>
           </>
+        )}
+        {Boolean(phoneNumber) && (
+          <TouchableOpacity onPress={_openDialer}>
+            <Text size="h3" style={styles.label}>
+              Contact me
+            </Text>
+            <Text>{phoneNumber}</Text>
+          </TouchableOpacity>
+        )}
+        {Boolean(address) && (
+          <TouchableOpacity onPress={_openMap}>
+            <Text size="h3" style={styles.label}>
+              Address
+            </Text>
+            <Text>{address}</Text>
+          </TouchableOpacity>
         )}
         <Text size="h3" style={styles.label}>
           Meals ({formatNumber(recipeCount)})

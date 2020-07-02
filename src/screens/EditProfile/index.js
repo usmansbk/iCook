@@ -1,15 +1,18 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Header from '../../common/Header';
+import Text from '../../common/Text';
 import TextInput from '../../common/TextInput';
 import Button from '../../common/Button';
 import Avatar from '../../common/Avatar';
+import CheckBox from '../../common/Checkbox';
 import Icon from '../../common/Icon';
 import colors from '../../config/colors';
+import {countryCodes} from '../../lib/constants';
 
 export default ({navigation}) => {
   const goBack = React.useCallback(() => navigation.goBack(), [navigation]);
-  const {name = 'Usman', avatar, address, bio = ''} = {};
+  const {name = 'Usman', avatar, address, bio = '', showNumber = true} = {};
   return (
     <>
       <Header title="Edit profile" goBack={goBack} />
@@ -22,6 +25,20 @@ export default ({navigation}) => {
         </View>
         <View style={styles.field}>
           <TextInput label="Name" value={name} placeholder="Enter your name" />
+        </View>
+        <View style={styles.field}>
+          <TextInput
+            required
+            label="Phone number"
+            items={countryCodes}
+            dropdownPlaceholder="Telephone Prefix"
+            placeholder="Enter your phone number"
+            keyboardType="phone-pad"
+          />
+        </View>
+        <View style={styles.row}>
+          <CheckBox checked={showNumber} style={styles.checkbox} />
+          <Text style={styles.footerText}>Show number in profile</Text>
         </View>
         <View style={styles.field}>
           <TextInput
@@ -69,5 +86,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.primary,
+  },
+  row: {
+    flexDirection: 'row',
+    paddingBottom: 12,
+  },
+  footerText: {
+    marginLeft: 8,
   },
 });
