@@ -6,7 +6,7 @@ export default ({placeholder, onChangeText, value}) => {
   return (
     <View style={styles.container}>
       <TextInput
-        placeholder="Search title, ingredient, or author"
+        placeholder="Search title, category, or author"
         onChangeText={onChangeText}
         value={value}
         leftIcon="search1"
