@@ -1,27 +1,39 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import NumberBadge from './NumberBadge';
 import Text from './Text';
 import TextInput from './TextInput';
 
-export default ({items = [], editable}) => {
+export default ({items = [], editable = true, renderItem}) => {
   const [data] = React.useState(items);
   const _renderItem = React.useCallback(
     (item, index) => {
-      return <Item {...item} key={index} edit={editable} number={index + 1} />;
+      return (
+        <Item {...item} key={index} editable={editable} number={index + 1} />
+      );
     },
     [editable],
   );
-  return <View>{data.map(_renderItem)}</View>;
+  return <View>{data.map(renderItem || _renderItem)}</View>;
 };
 
 function Item({
   number = 0,
   value,
-  edit = true,
+  editable = false,
   onSubmit = () => null,
   onDelete = () => null,
 }) {
+  const [edit, setEdit] = React.useState(false);
+  const _setEdit = React.useCallback(() => {
+    if (editable) {
+      setEdit(true);
+    }
+  }, [editable]);
+  const _onSubmit = React.useCallback(() => {
+    setEdit(false);
+    onSubmit();
+  }, [setEdit, onSubmit]);
   return (
     <View style={styles.container}>
       {Boolean(!edit) && (
@@ -37,11 +49,14 @@ function Item({
             iconSize={16}
             multiline
             leftIcon="closecircle"
-            onPressIcon={onSubmit}
+            onPressIcon={_onSubmit}
             onPressLeftIcon={onDelete}
+            autoFocus
           />
         ) : (
-          <Text style={styles.text}>{value}</Text>
+          <TouchableOpacity onPress={_setEdit}>
+            <Text style={styles.text}>{value}</Text>
+          </TouchableOpacity>
         )}
       </View>
     </View>
