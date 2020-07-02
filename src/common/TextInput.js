@@ -26,6 +26,7 @@ export default ({
   onFocus = () => null,
   onChangeText = () => null,
   onPressIcon,
+  onPressLeftIcon,
   ...rest
 }) => {
   const [focused, setFocus] = React.useState(false);
@@ -77,13 +78,16 @@ export default ({
           </View>
         )}
         {Boolean(leftIcon) && (
-          <View style={styles.leftIcon}>
+          <TouchableOpacity
+            disabled={!onPressLeftIcon}
+            onPress={onPressLeftIcon}
+            style={styles.leftIcon}>
             <Icon
               size={iconSize}
               color={focused ? colors.primary : undefined}
               name={leftIcon}
             />
-          </View>
+          </TouchableOpacity>
         )}
         <TextInput
           value={value}

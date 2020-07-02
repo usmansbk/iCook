@@ -3,23 +3,47 @@ import {View, StyleSheet} from 'react-native';
 import NumberBadge from './NumberBadge';
 import Text from './Text';
 import TextInput from './TextInput';
-import IconButton from './IconButton';
-import colors from '../config/colors';
 
-export default ({items = []}) => {
-  const [data, setData] = React.useState(items);
-  const _renderItem = React.useCallback((item, index) => {
-    return <Item {...item} key={index} number={index + 1} />;
-  }, []);
+export default ({items = [], editable}) => {
+  const [data] = React.useState(items);
+  const _renderItem = React.useCallback(
+    (item, index) => {
+      return <Item {...item} key={index} edit={editable} number={index + 1} />;
+    },
+    [editable],
+  );
   return <View>{data.map(_renderItem)}</View>;
 };
 
-function Item({number = 0, value, active}) {
+function Item({
+  number = 0,
+  value,
+  edit = true,
+  onSubmit = () => null,
+  onDelete = () => null,
+}) {
   return (
     <View style={styles.container}>
-      <NumberBadge number={number} />
-      <Text style={styles.text}>{value}</Text>
-      <IconButton name="checkcircle" color={colors.accent} />
+      {Boolean(!edit) && (
+        <View style={styles.badge}>
+          <NumberBadge number={number} />
+        </View>
+      )}
+      <View style={styles.content}>
+        {edit ? (
+          <TextInput
+            value={value}
+            icon="checkcircle"
+            iconSize={16}
+            multiline
+            leftIcon="closecircle"
+            onPressIcon={onSubmit}
+            onPressLeftIcon={onDelete}
+          />
+        ) : (
+          <Text style={styles.text}>{value}</Text>
+        )}
+      </View>
     </View>
   );
 }
@@ -30,8 +54,10 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     alignItems: 'flex-start',
   },
-  text: {
+  content: {
     flex: 1,
+  },
+  text: {
     marginLeft: 8,
   },
 });

@@ -5,10 +5,11 @@ import Text from '../../common/Text';
 import Carousel from '../../common/Carousel';
 import Button from '../../common/Button';
 import IngredientsList from './Ingredients';
+import HealthList from './Health';
 import {currencies} from '../../lib/constants';
 
 export default ({values = {}}) => {
-  const {images = []} = values;
+  const {images = [], ingredients = [], healthBenefits = []} = values;
   return (
     <ScrollView style={styles.container}>
       <View style={styles.field}>
@@ -42,17 +43,16 @@ export default ({values = {}}) => {
       <View style={styles.field}>
         <Text>Ingredients</Text>
         <View>
-          <IngredientsList />
+          <IngredientsList items={ingredients} />
         </View>
         <Button text="Add Ingredient" />
       </View>
       <View style={styles.field}>
-        <TextInput
-          label="Health Benefits"
-          placeholder="Add benefit"
-          multiline
-          icon="pluscircleo"
-        />
+        <Text>Health benefits</Text>
+        <View>
+          <HealthList items={healthBenefits} />
+        </View>
+        <TextInput placeholder="Add benefit" multiline icon="pluscircleo" />
       </View>
       <View style={styles.field}>
         {Boolean(images.length) && <Carousel edit imagesUrls={images} />}
