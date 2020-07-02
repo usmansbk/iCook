@@ -26,7 +26,7 @@ const TextAvatar = ({name = '', size, style, color}) => {
   return (
     <View style={[textStyles.container, style]}>
       <Text adjustsFontSizeToFit style={textStyle}>
-        {name[0].toUpperCase()}
+        {name && name[0].toUpperCase()}
       </Text>
     </View>
   );
