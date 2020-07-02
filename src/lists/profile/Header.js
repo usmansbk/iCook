@@ -6,6 +6,7 @@ import Button from '../../common/Button';
 import Rating from '../../common/Rating';
 import colors from '../../config/colors';
 import {formatNumber} from '../../lib/utils';
+import {openDialer, openMap} from '../../helpers/utils';
 
 const Stat = ({label, value, disabled, onPress}) => {
   return (
@@ -52,11 +53,9 @@ export default ({
         id,
       },
     });
-  const _openMap = () => {
-    console.log(address);
-  };
+  const _openMap = openMap(address);
 
-  const _openDialer = () => console.log(phoneNumber);
+  const _openDialer = () => openDialer(phoneNumber);
 
   return (
     <View style={styles.container}>
