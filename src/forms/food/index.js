@@ -51,8 +51,8 @@ export default ({values = {}}) => {
           icon="pluscircleo"
         />
       </View>
-      {Boolean(images.length) && <Carousel edit imagesUrls={images} />}
       <View style={styles.field}>
+        {Boolean(images.length) && <Carousel edit imagesUrls={images} />}
         <Button text="Add food image" />
       </View>
       <View style={[styles.field, styles.last]}>
