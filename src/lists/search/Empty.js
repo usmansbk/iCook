@@ -6,7 +6,8 @@ export default () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/cart.png')}
+        resizeMode="contain"
+        source={require('../../assets/images/search.png')}
         style={styles.image}
       />
       <Text size="h1">Discover</Text>

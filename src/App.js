@@ -55,7 +55,7 @@ const HomeTab = () => {
           let iconName;
 
           if (route.name === 'Home') {
-            iconName = 'isv';
+            iconName = 'home';
           } else if (route.name === 'Likes') {
             iconName = 'heart' + (focused ? '' : 'o');
           } else if (route.name === 'Account') {

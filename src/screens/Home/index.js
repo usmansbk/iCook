@@ -7,7 +7,7 @@ import mock from './mock';
 export default ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Header />
+      <Header title="iCook" />
       <Dishes navigation={navigation} items={mock} />
     </View>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import {SectionList} from 'react-native';
 import Ingredient from '../../common/Ingredient';
-// import Step from './Step';
+import Step from './Step';
 import Health from './Health';
 import SectionHeader from './SectionHeader';
 import Item from '../dishes/Item';
@@ -32,20 +32,20 @@ export default class Recipe extends React.Component {
       },
     };
 
-    // const steps = {
-    //   data: recipe.steps,
-    //   title: 'PREPARATION',
-    //   renderItem: ({item}) => {
-    //     return (
-    //       <Step
-    //         id={item.id}
-    //         _do={item.do}
-    //         step={item.step}
-    //         image={item.image}
-    //       />
-    //     );
-    //   },
-    // };
+    const steps = {
+      data: recipe.steps,
+      title: 'PREPARATION',
+      renderItem: ({item}) => {
+        return (
+          <Step
+            id={item.id}
+            _do={item.do}
+            step={item.step}
+            image={item.image}
+          />
+        );
+      },
+    };
 
     const health = {
       data: recipe.healthBenefits,
@@ -57,9 +57,9 @@ export default class Recipe extends React.Component {
     if (ingredients.data.length) {
       sections.push(ingredients);
     }
-    // if (steps.data.length) {
-    //   sections.push(steps);
-    // }
+    if (steps.data.length) {
+      sections.push(steps);
+    }
     if (health.data.length) {
       sections.push(health);
     }
