@@ -12,7 +12,7 @@ export default class Account extends React.Component {
   _toProfile = () =>
     this.props.navigation.navigate('profile', {id: this.props.id});
   _renderHeader = () => {
-    const name = 'Usman Suleiman Babakolo';
+    const name = 'Usman Suleiman';
     const email = 'usmansbk@gmail.com';
     return (
       <TouchableOpacity onPress={this._toProfile} style={styles.header}>

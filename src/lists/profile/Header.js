@@ -3,7 +3,7 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Avatar from '../../common/Avatar';
 import Text from '../../common/Text';
 import Button from '../../common/Button';
-import Rating from '../../common/Rating';
+// import Rating from '../../common/Rating';
 import colors from '../../config/colors';
 import {formatNumber} from '../../lib/utils';
 import {openDialer, openMap} from '../../helpers/utils';
@@ -85,7 +85,7 @@ export default ({
         <Text size="h2" style={styles.name}>
           {name}
         </Text>
-        {Boolean(rating) && <Rating rating={rating} />}
+        {/* {Boolean(rating) && <Rating rating={rating} />} */}
         {Boolean(bio) && (
           <>
             <Text size="h3" style={styles.label}>

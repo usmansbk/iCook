@@ -51,6 +51,10 @@ const HomeTab = () => {
         showLabel: false,
       }}
       screenOptions={({route}) => ({
+        tabBarVisible: (name) => {
+          console.log(name);
+          return true;
+        },
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
 

@@ -6,7 +6,7 @@ import Carousel from '../../common/Carousel';
 import Button from '../../common/Button';
 import IngredientsList from './Ingredients';
 import HealthList from './Health';
-import {currencies} from '../../lib/constants';
+// import {currencies} from '../../lib/constants';
 
 export default ({values = {}}) => {
   const [mount, setMount] = React.useState(false);
@@ -31,7 +31,7 @@ export default ({values = {}}) => {
           placeholder="Lunch, Vegan, Gluten-Free, or anything"
         />
       </View>
-      <View style={styles.field}>
+      {/* <View style={styles.field}>
         <TextInput
           label="Price"
           required
@@ -40,7 +40,7 @@ export default ({values = {}}) => {
           placeholder="Reasonable price"
           dropdownPlaceholder="Currency"
         />
-      </View>
+      </View> */}
       <View style={styles.field}>
         <TextInput
           label="Description"
