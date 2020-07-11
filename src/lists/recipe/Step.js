@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet /*, Image*/} from 'react-native';
 import Text from '../../common/Text';
 import NumberBadge from '../../common/NumberBadge';
 
 export default class Step extends React.Component {
   render() {
-    const {step, _do, image} = this.props;
+    const {step, _do /*,image*/} = this.props;
     return (
       <View style={styles.separator}>
         <View style={styles.container}>
@@ -14,7 +14,7 @@ export default class Step extends React.Component {
           </View>
           <Text style={styles.do}>{_do}</Text>
         </View>
-        {Boolean(image) && <Image source={{uri: image}} style={styles.image} />}
+        {/* {Boolean(image) && <Image source={{uri: image}} style={styles.image} />} */}
       </View>
     );
   }

@@ -4,15 +4,13 @@ import Food from '../../forms/food';
 import colors from '../../config/colors';
 import mock from './mock';
 
-export default ({navigation, route}) => {
-  const _goBack = React.useCallback(() => navigation.goBack(), [navigation]);
+export default ({route}) => {
   const _clearForm = () => null;
   const title = route.params && route.params.title;
   return (
     <>
       <Header
-        title={title || 'New'}
-        goBack={_goBack}
+        title={title || 'Add a new dish'}
         rightAction={_clearForm}
         rightIcon="close"
         rightIconColor={colors.veryWeakRed}
