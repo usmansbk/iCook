@@ -6,7 +6,6 @@ import IconButton from '../../common/IconButton';
 import colors from '../../config/colors';
 import formatDistance from 'date-fns/formatDistanceToNow';
 import Carousel from '../../common/Carousel';
-import PriceTag from '../../common/PriceTag';
 import {formatNumber} from '../../lib/utils';
 
 export default class Item extends React.Component {
@@ -27,8 +26,6 @@ export default class Item extends React.Component {
       category,
       description,
       big,
-      currency = 'NGN',
-      price = 1000,
     } = this.props;
     return (
       <View style={styles.container}>
@@ -52,14 +49,12 @@ export default class Item extends React.Component {
         <TouchableNativeFeedback disabled={disabled} onPress={this._onPress}>
           <View style={styles.footer}>
             <View style={styles.buttons}>
-              <PriceTag currency={currency} price={price} />
               <View style={styles.row}>
-                <IconButton name="shoppingcart" onPress={() => null} />
-                <IconButton name="message1" onPress={this._onPressComment} />
                 <IconButton
                   color={isLiked ? colors.veryWeakRed : undefined}
                   name={`heart${isLiked ? '' : 'o'}`}
                 />
+                <IconButton name="message1" onPress={this._onPressComment} />
               </View>
             </View>
             <View style={styles.footerBody}>
@@ -103,7 +98,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttons: {
-    paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
