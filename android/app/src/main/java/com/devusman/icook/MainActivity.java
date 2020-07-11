@@ -1,4 +1,4 @@
-package com.devusman.canteen;
+package com.devusman.icook;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import org.devio.rn.splashscreen.SplashScreen;
@@ -11,7 +11,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Canteen";
+    return "iCook";
   }
 
   @Override

@@ -133,7 +133,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.devusman.canteen"
+        applicationId "com.devusman.icook"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

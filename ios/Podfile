@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'Canteen' do
-  # Pods for Canteen
+target 'iCook' do
+  # Pods for iCook
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'Canteen' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'CanteenTests' do
+  target 'iCookTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'Canteen' do
   end
 end
 
-target 'Canteen-tvOS' do
-  # Pods for Canteen-tvOS
+target 'iCook-tvOS' do
+  # Pods for iCook-tvOS
 
-  target 'Canteen-tvOSTests' do
+  target 'iCook-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

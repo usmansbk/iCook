@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "Canteen-tvOS.app"
-               BlueprintName = "Canteen-tvOS"
-               ReferencedContainer = "container:Canteen.xcodeproj">
+               BuildableName = "iCook-tvOS.app"
+               BlueprintName = "iCook-tvOS"
+               ReferencedContainer = "container:iCook.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "Canteen-tvOSTests.xctest"
-               BlueprintName = "Canteen-tvOSTests"
-               ReferencedContainer = "container:Canteen.xcodeproj">
+               BuildableName = "iCook-tvOSTests.xctest"
+               BlueprintName = "iCook-tvOSTests"
+               ReferencedContainer = "container:iCook.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "Canteen-tvOS.app"
-            BlueprintName = "Canteen-tvOS"
-            ReferencedContainer = "container:Canteen.xcodeproj">
+            BuildableName = "iCook-tvOS.app"
+            BlueprintName = "iCook-tvOS"
+            ReferencedContainer = "container:iCook.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "Canteen-tvOS.app"
-            BlueprintName = "Canteen-tvOS"
-            ReferencedContainer = "container:Canteen.xcodeproj">
+            BuildableName = "iCook-tvOS.app"
+            BlueprintName = "iCook-tvOS"
+            ReferencedContainer = "container:iCook.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
