@@ -1,14 +1,13 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import Dishes from '../../lists/dishes';
-import Header from '../../common/Header';
-import mock from './mock';
+import Searchbar from '../../common/Searchbar';
+import Search from '../../lists/search';
 
-export default ({navigation}) => {
+export default () => {
   return (
     <View style={styles.container}>
-      <Header />
-      <Dishes navigation={navigation} items={mock} />
+      <Searchbar />
+      <Search />
     </View>
   );
 };

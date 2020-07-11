@@ -6,12 +6,6 @@ export default [
     route: 'editprofile',
   },
   {
-    id: 'newdish',
-    title: 'Sell Food',
-    icon: 'isv',
-    route: 'editfood',
-  },
-  {
     id: 'account',
     title: 'Account settings',
     icon: 'user',

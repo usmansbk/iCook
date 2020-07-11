@@ -24,7 +24,7 @@ import Country from './screens/Country';
 import LoginOptions from './screens/LoginOptions';
 import Comments from './screens/Comments';
 import Notifications from './screens/Notifications';
-import Cart from './screens/Cart';
+import Search from './screens/Search';
 import {Followers, Following} from './screens/Follow';
 import EditFood from './screens/EditFood';
 
@@ -60,18 +60,18 @@ const HomeTab = () => {
             iconName = 'heart' + (focused ? '' : 'o');
           } else if (route.name === 'Account') {
             iconName = 'user';
-          } else if (route.name === 'Cart') {
-            iconName = 'shoppingcart';
-          } else if (route.name === 'Notifications') {
-            iconName = 'bells';
+          } else if (route.name === 'Search') {
+            iconName = 'search1';
+          } else if (route.name === 'editfood') {
+            iconName = 'pluscircle' + (focused ? '' : 'o');
           }
           return <Icon name={iconName} color={color} size={size} />;
         },
       })}>
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="editfood" component={EditFood} />
       <Tab.Screen name="Likes" component={Favorites} />
-      <Tab.Screen name="Cart" component={Cart} />
-      <Tab.Screen name="Notifications" component={Notifications} />
       <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
   );
@@ -101,7 +101,6 @@ export default function App() {
           <Stack.Screen name="changegender" component={Gender} />
           <Stack.Screen name="changeregion" component={Country} />
           <Stack.Screen name="loginoptions" component={LoginOptions} />
-          <Stack.Screen name="editfood" component={EditFood} />
           <Stack.Screen name="comments" component={Comments} />
           <Stack.Screen
             options={({navigation, route}) => ({

@@ -9,10 +9,8 @@ export default () => {
         source={require('../../assets/images/cart.png')}
         style={styles.image}
       />
-      <Text size="h1">Your Cart is Empty</Text>
-      <Text style={styles.subtitle}>
-        Looks like you haven't added anything to your cart yet
-      </Text>
+      <Text size="h1">Discover</Text>
+      <Text style={styles.subtitle}>See popular food near you</Text>
     </View>
   );
 };
