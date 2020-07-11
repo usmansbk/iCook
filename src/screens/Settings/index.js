@@ -51,7 +51,6 @@ export default ({navigation}) => {
           subtitle={country}
           onPress={_toChangeRegion}
         />
-        <Item title="Socials login options" onPress={_toLoginOptions} />
         <Item
           color={colors.veryWeakRed}
           title="Close account"

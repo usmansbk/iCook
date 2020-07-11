@@ -53,7 +53,7 @@ export default ({navigation}) => {
             label="Address"
             value={address}
             multiline
-            placeholder="Restaurant full address"
+            placeholder="Restaurant / Home full address"
           />
         </View>
         <View style={styles.field}>
@@ -61,7 +61,7 @@ export default ({navigation}) => {
             label="Bio"
             value={bio}
             multiline
-            placeholder="About your business"
+            placeholder="About you or your business"
           />
         </View>
         <Button text="Update profile" />
